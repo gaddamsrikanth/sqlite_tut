@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="sqlite_tut" customModuleProvider="target">
+            <connections>
+                <outlet property="tblStudentData" destination="egw-al-Qh6" id="xZx-sA-GzT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSl-DM-sY0">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIr-3i-7Fk">
+                            <rect key="frame" x="103" y="5" width="168" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="uIr-3i-7Fk" secondAttribute="height" multiplier="56:9" id="Mhh-7z-wsX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbX-o7-858">
+                            <rect key="frame" x="312" y="0.0" width="55" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="PbX-o7-858" secondAttribute="height" multiplier="23:15" id="Cxq-Kj-kEx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                            <state key="normal" title="Insert">
+                                <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            </state>
+                            <connections>
+                                <action selector="handleBtnInsert:" destination="-1" eventType="touchUpInside" id="bZs-PM-G7J"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstItem="PbX-o7-858" firstAttribute="centerY" secondItem="aSl-DM-sY0" secondAttribute="centerY" id="2W1-Mg-JTY"/>
+                        <constraint firstAttribute="width" secondItem="aSl-DM-sY0" secondAttribute="height" multiplier="375:37" id="ahe-9s-EyL"/>
+                        <constraint firstAttribute="trailing" secondItem="PbX-o7-858" secondAttribute="trailing" constant="8" id="ipA-ap-ed3"/>
+                        <constraint firstItem="uIr-3i-7Fk" firstAttribute="centerX" secondItem="aSl-DM-sY0" secondAttribute="centerX" id="mjX-fl-4ce"/>
+                        <constraint firstItem="uIr-3i-7Fk" firstAttribute="centerY" secondItem="aSl-DM-sY0" secondAttribute="centerY" id="wOz-Ne-qKD"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="egw-al-Qh6">
+                    <rect key="frame" x="0.0" y="45" width="375" height="602"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aSl-DM-sY0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9en-5U-V3q"/>
+                <constraint firstItem="aSl-DM-sY0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BPy-c0-ALw"/>
+                <constraint firstItem="egw-al-Qh6" firstAttribute="top" secondItem="aSl-DM-sY0" secondAttribute="bottom" constant="8" id="DgK-Pc-C5V"/>
+                <constraint firstItem="egw-al-Qh6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PT6-Tg-NoD"/>
+                <constraint firstAttribute="bottom" secondItem="egw-al-Qh6" secondAttribute="bottom" constant="20" id="WDA-3F-6ih"/>
+                <constraint firstAttribute="trailing" secondItem="egw-al-Qh6" secondAttribute="trailing" id="jXu-G5-XvA"/>
+                <constraint firstAttribute="trailing" secondItem="aSl-DM-sY0" secondAttribute="trailing" id="nJP-rl-LnA"/>
+            </constraints>
+            <point key="canvasLocation" x="-80.5" y="-40.5"/>
+        </view>
+    </objects>
+</document>

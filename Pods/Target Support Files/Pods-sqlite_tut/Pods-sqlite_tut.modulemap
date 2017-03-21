@@ -1,0 +1,6 @@
+framework module Pods_sqlite_tut {
+  umbrella header "Pods-sqlite_tut-umbrella.h"
+
+  export *
+  module * { export * }
+}
