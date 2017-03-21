@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-1o-vL7">
@@ -25,7 +25,7 @@
                         <constraints>
                             <constraint firstAttribute="width" secondItem="kxg-1o-vL7" secondAttribute="height" multiplier="23:15" id="Mn5-WJ-tTa"/>
                         </constraints>
-                        <state key="normal" title="Delete"/>
+                        <state key="normal" title="Next"/>
                         <connections>
                             <action selector="handleBtnDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9fW-St-sGK"/>
                         </connections>

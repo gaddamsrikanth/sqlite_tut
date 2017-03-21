@@ -19,94 +19,71 @@ class server_API {
     
     let int_gone_msg = "You are disconnected from the internet.".capitalized
     
-    func requestFor_NSMutableDictionary(Str_Request_Url:String , Request_parameter:[String: String]? , Request_parameter_Images:[String: UIImage]? ,status: @escaping (_ result: Calling_Status) -> Void , response_Dictionary: @escaping (_ results: NSMutableDictionary) -> Void , response_Array: @escaping (_ results: NSMutableArray) -> Void,isTokenEmbeded:Bool){
-        let myurl = NSURL(string: "\(Base_url)\(Str_Request_Url)")
-        let obj_of_status = Calling_Status(Status: false, Message: "Request Failed",Request_Url: "\(Base_url)\(Str_Request_Url)")
-        print(myurl!)
-        let req = NSMutableURLRequest(url: myurl! as URL)
-        if(isTokenEmbeded == false){
-            
-        }else{
-//            req.setValue(AppDelegate.token , forHTTPHeaderField: "Authorization")
-        }
-        var QuaryString = ""
+    func requestFor_NSMutableDictionary(strRequestUrl:String, strRequestMethod: String = "GET", requestParameter:[String: Any]? , requestParameterImages:[String: UIImage]? ,isTokenEmbeded:Bool, status: @escaping (_ result: Calling_Status) -> Void , responseDictionary: @escaping (_ results: NSMutableDictionary) -> Void, responseArray: @escaping (_ results: NSMutableArray) -> Void) {
         
-        if Request_parameter_Images != nil {
-            req.httpMethod = "POST"
+        let myurl = NSURL(string: "\(Base_url)\(strRequestUrl)")
+        let obj_of_status = Calling_Status(Status: false, Message: "failed",Request_Url: "\(Base_url)\(strRequestUrl)")
+        let req = NSMutableURLRequest(url: myurl! as URL)
+        req.httpMethod = strRequestMethod
+        
+        var QuaryString = ""
+        if requestParameterImages != nil {
             let boundary = generateBoundaryString()
             req.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-            var key_name = ""
-            var image_date = [UIImage]()
-            for (key, value) in Request_parameter_Images! {
-                let imageData = UIImageJPEGRepresentation(value, 1)
-                if imageData != nil{
-                    if(key.contains("product_image")){
-                        key_name="product_image"
-                        image_date.append(value)
-                    }else{
-                        req.httpBody = self.createBodyWithParameters(parameters: Request_parameter, filename: key, filePathKey: key, imageDataKey: imageData! as NSData, boundary: boundary) as Data
-                    }
-                }
-            }
-            if key_name != ""
-            {
-                req.httpBody = self.createBodyWithParameters_arr(parameters: Request_parameter, filename: key_name, filePathKey: key_name, imageDataKey: image_date, boundary: boundary) as Data
-            }
+            req.httpBody = self.createBodyWithParameter(parameters: requestParameter, imageData: requestParameterImages!, boundary: boundary) as Data
         }
         else{
-            if Request_parameter  != nil {
-                req.httpMethod = "POST"
-                _ = generateBoundaryString()
-                
-                for (key, value) in Request_parameter!
-                {
-                    QuaryString = "\(QuaryString)\(key)=\(value)&"
+            if requestParameter  != nil {
+                do{
+                    req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                    let jsonData = try JSONSerialization.data(withJSONObject: requestParameter!, options: .prettyPrinted)
+                    
+                    req.httpBody = jsonData
+                }catch{
+                    for (key, value) in requestParameter!
+                    {
+                        QuaryString = "\(QuaryString)\(key)=\(value)&"
+                    }
+                    req.httpBody = QuaryString.data(using: String.Encoding.utf8)
                 }
-                req.httpBody = QuaryString.data(using: String.Encoding.utf8)
-                
             }
         }
-        
-        
-        
         
         let task = URLSession.shared.dataTask(with: req as URLRequest){
             data,res,err in
             if(err != nil)
             {
-                if err?._code == -1004{
-                    obj_of_status.Message = "Could't create connection with the server.".capitalized
+                if err?._code == -1001{
+                    obj_of_status.Message = "Request Time Out.".capitalized
+                    status(obj_of_status)
+                    return
+                }else if err?._code == -1004{
+                    obj_of_status.Message = "could Not Create Connection With Server".capitalized
                     status(obj_of_status)
                     return
                 }else if err?._code == -1202{
-                    obj_of_status.Message = "Could't create connection with the server.".capitalized
+                    obj_of_status.Message = "could Not Create Connection With Server".capitalized
+                    status(obj_of_status)
+                    return
+                }else{
+                    obj_of_status.Message = "something Goes Wrong".capitalized
                     status(obj_of_status)
                     return
                 }
-                obj_of_status.Message = "\(err)"
-                status(obj_of_status)
-                return
             }
-            
-            if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3{
             do {
-                if let json: NSMutableDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSMutableDictionary
-                {
+                if let data: NSMutableDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSMutableDictionary {
                     obj_of_status.Message = "Success get Response.".capitalized
                     status(obj_of_status)
-                    response_Dictionary(json)
+                    responseDictionary(data)
                     return
-                }else{
-                    if let json: NSMutableArray = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSMutableArray
-                    {
+                }else {
+                    if let data: NSMutableArray = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSMutableArray {
                         obj_of_status.Message = "Success get Response.".capitalized
                         status(obj_of_status)
-                        response_Array(json)
+                        responseArray(data)
                         return
-                    }else{
-                        if (res != nil) {
-                            obj_of_status.Message = "\(((res as? HTTPURLResponse)?.statusCode)!)"
-                        }
+                    }else {
                         status(obj_of_status)
                         return
                     }
@@ -118,38 +95,6 @@ class server_API {
                 }
                 status(obj_of_status)
                 return
-            }
-            }else{
-                do {
-                    if let json: NSMutableDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSMutableDictionary
-                    {
-                        obj_of_status.Message = "Success get Response.".capitalized
-                        status(obj_of_status)
-                        response_Dictionary(json)
-                        return
-                    }else{
-                        if let json: NSMutableArray = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSMutableArray
-                        {
-                            obj_of_status.Message = "Success get Response.".capitalized
-                            status(obj_of_status)
-                            response_Array(json)
-                            return
-                        }else{
-                            if (res != nil) {
-                                obj_of_status.Message = "\(((res as? HTTPURLResponse)?.statusCode)!)"
-                            }
-                            status(obj_of_status)
-                            return
-                        }
-                    }
-                } catch let error as NSError {
-                    obj_of_status.Message = "\(error.localizedDescription)"
-                    if (res != nil) {
-                        obj_of_status.Message = "\(((res as? HTTPURLResponse)?.statusCode)!)"
-                    }
-                    status(obj_of_status)
-                    return
-                }
             }
         }
         task.resume()
@@ -175,6 +120,30 @@ class server_API {
         body.append("Content-Type: \(mimetype)\r\n\r\n".data(using: String.Encoding.utf8)!)
         body.append(imageDataKey as Data)
         body.append("\r\n".data(using: String.Encoding.utf8)!)
+        body.append("--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
+        return body
+    }
+    private func createBodyWithParameter(parameters: [String: Any]?, imageData: [String: UIImage], boundary: String) -> NSData {
+        let body = NSMutableData();
+        if parameters != nil {
+            for (key, value) in parameters! {
+                body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+                body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: String.Encoding.utf8)!)
+                body.append("\(value)\r\n".data(using: String.Encoding.utf8)!)
+            }
+        }
+        for (_,img) in imageData {
+            var i = 1
+            let mimetype = "image/jpg"
+            body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+            let name = "img\(i).jpg"
+            body.append("Content-Disposition: form-data; name=\"categoryImg\"; filename=\"\(name)\"\r\n".data(using: String.Encoding.utf8)!)
+            body.append("Content-Type: \(mimetype)\r\n\r\n".data(using: String.Encoding.utf8)!)
+            let imageData = UIImageJPEGRepresentation(img, 1)
+            body.append(imageData!)
+            body.append("\r\n".data(using: String.Encoding.utf8)!)
+            i += 1
+        }
         body.append("--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
         return body
     }
