@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet var tblStudentData: UITableView!
-    var marrStudentData: NSMutableArray! = []
+    var mUserData: NSMutableArray! = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchServerData("users/1")
         self.navigationController?.isNavigationBarHidden = true
         tblStudentData.delegate = self
         tblStudentData.dataSource = self
@@ -21,7 +23,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         tblStudentData.allowsSelection = false
     }
     override func viewWillAppear(_ animated: Bool) {
-        getStudentData()
+//        getStudentData()
     }
     
     @IBAction func handleBtnInsert(_ sender: Any) {
@@ -29,7 +31,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return marrStudentData.count
+        return mUserData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,6 +41,11 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 //        cell.lblId.text = "Marks : \(student.Marks)"
 //        cell.student = student
 //        cell.main = self
+        let user: User = mUserData.object(at: indexPath.row) as! User
+        cell.lblName.text = "Name : \(user.name!)"
+        cell.lblId.text = "id : \(user.id!)"
+        cell.student = user
+        cell.main = self
         return cell
     }
     
@@ -48,9 +55,23 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func getStudentData()
     {
-        marrStudentData = NSMutableArray()
-        marrStudentData = ModelManager.getInstance().getAllStudentData()
+        mUserData = NSMutableArray()
+        mUserData = ModelManager.getInstance().getAllData()
         tblStudentData.reloadData()
+    }
+    
+    func fetchServerData(_ url: String) {
+        server_API.sharedObject.requestFor_NSMutableDictionary(strRequestUrl:  url, strRequestMethod: "GET", requestParameter: nil, requestParameterImages: nil, isTokenEmbeded: false, status: { (status) in
+            
+        }, responseDictionary: { (resultDic) in
+            DispatchQueue.main.async {
+                let user: User = Mapper<User>().map(JSONObject: resultDic)!
+                self.mUserData.add(user)
+                self.tblStudentData.reloadData()
+            }
+        }, responseArray: { (resultArr) in
+            
+        })
     }
 
 }

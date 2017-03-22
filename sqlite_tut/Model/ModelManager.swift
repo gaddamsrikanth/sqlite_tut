@@ -16,7 +16,7 @@ class ModelManager: NSObject {
         return sharedInstance
     }
     
-    func addStudentData(_ studentInfo: AnyObject) -> Bool {
+    func addData(_ studentInfo: AnyObject) -> Bool {
 //        sharedInstance.database!.open()
 //        let isInserted = sharedInstance.database!.executeUpdate("INSERT INTO student_info (Name, Marks) VALUES (?, ?)", withArgumentsIn: [studentInfo.Name, studentInfo.Marks])
 //        sharedInstance.database!.close()
@@ -25,7 +25,7 @@ class ModelManager: NSObject {
 
     }
    
-    func updateStudentData(_ studentInfo: AnyObject) -> Bool {
+    func updateData(_ studentInfo: AnyObject) -> Bool {
 //        sharedInstance.database!.open()
 //        let isUpdated = sharedInstance.database!.executeUpdate("UPDATE student_info SET Name=?, Marks=? WHERE RollNo=?", withArgumentsIn: [studentInfo.Name, studentInfo.Marks, studentInfo.RollNo])
 //        sharedInstance.database!.close()
@@ -33,7 +33,7 @@ class ModelManager: NSObject {
         return true
     }
     
-    func deleteStudentData(_ studentInfo: AnyObject) -> Bool {
+    func deleteData(_ studentInfo: AnyObject) -> Bool {
 //        sharedInstance.database!.open()
 //        let isDeleted = sharedInstance.database!.executeUpdate("DELETE FROM student_info WHERE RollNo=?", withArgumentsIn: [studentInfo.RollNo])
 //        sharedInstance.database!.close()
@@ -42,7 +42,7 @@ class ModelManager: NSObject {
 
     }
 
-    func getAllStudentData() -> NSMutableArray {
+    func getAllData() -> NSMutableArray {
 //        sharedInstance.database!.open()
 //        let resultSet: FMResultSet! = sharedInstance.database!.executeQuery("SELECT * FROM student_info", withArgumentsIn: nil)
 //        let marrStudentInfo : NSMutableArray = NSMutableArray()

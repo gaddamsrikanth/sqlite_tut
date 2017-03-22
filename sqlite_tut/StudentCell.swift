@@ -31,13 +31,7 @@ class StudentCell: UITableViewCell {
         main.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func handleBtnDelete(_ sender: Any) {
-        if ModelManager.getInstance().deleteStudentData(student) {
-            Util.invokeAlertMethod("Delete", strBody: "Delete Successfully", delegate: main)
-            if main.nibName == "HomeVC" {
-                (main as! HomeVC).getStudentData()
-            }
-        } else {
-            Util.invokeAlertMethod("Delete", strBody: "Delete failed", delegate: main)
-        }
+        (main as! HomeVC).fetchServerData("users/\((student as! User).id! + 1)")
+        (sender as! UIButton).isHidden = true
     }
 }
