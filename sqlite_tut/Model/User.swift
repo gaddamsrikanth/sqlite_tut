@@ -24,14 +24,14 @@ class User: NSObject,Mappable {
     }
     
     func mapping(map: Map) {
-        id              <- map["id"]
-        name           <- map["name"]
-        username             <- map["username"]
+        id        <- map["id"]
+        name      <- map["name"]
+        username  <- map["username"]
         email     <- map["email"]
-        phone              <- map["phone"]
-        website           <- map["website"]
-        address     <- map["address"]
-        company     <- map["company"]
+        phone     <- map["phone"]
+        website   <- map["website"]
+        address   <- map["address"]
+        company   <- map["company"]
     }
 }
 

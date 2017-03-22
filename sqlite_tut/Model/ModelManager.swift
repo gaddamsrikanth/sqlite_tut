@@ -16,47 +16,66 @@ class ModelManager: NSObject {
         return sharedInstance
     }
     
-    func addData(_ studentInfo: AnyObject) -> Bool {
-//        sharedInstance.database!.open()
-//        let isInserted = sharedInstance.database!.executeUpdate("INSERT INTO student_info (Name, Marks) VALUES (?, ?)", withArgumentsIn: [studentInfo.Name, studentInfo.Marks])
-//        sharedInstance.database!.close()
-//        return isInserted
-        return true
+    func addData(_ tblName: String,_ col:String,_ val:String) -> Bool {
+        sharedInstance.database!.open()
+        let isInserted = sharedInstance.database!.executeStatements("INSERT INTO \(tblName)(\(col)) VALUES(\(val))")
+        sharedInstance.database!.close()
+        return isInserted
 
     }
    
-    func updateData(_ studentInfo: AnyObject) -> Bool {
-//        sharedInstance.database!.open()
-//        let isUpdated = sharedInstance.database!.executeUpdate("UPDATE student_info SET Name=?, Marks=? WHERE RollNo=?", withArgumentsIn: [studentInfo.Name, studentInfo.Marks, studentInfo.RollNo])
-//        sharedInstance.database!.close()
-//        return isUpdated
-        return true
+    func updateData(_ tblName: String,_ col:String,_ val:String) -> Bool {
+        sharedInstance.database!.open()
+        let isUpdated = sharedInstance.database!.executeStatements("UPDATE \(tblName) SET ")
+        sharedInstance.database!.close()
+        return isUpdated
     }
     
-    func deleteData(_ studentInfo: AnyObject) -> Bool {
-//        sharedInstance.database!.open()
-//        let isDeleted = sharedInstance.database!.executeUpdate("DELETE FROM student_info WHERE RollNo=?", withArgumentsIn: [studentInfo.RollNo])
-//        sharedInstance.database!.close()
-//        return isDeleted
-        return true
-
+    func deleteData(_ tblName: String,_ col:String,_ val:String) -> Bool {
+        sharedInstance.database!.open()
+        let isDeleted = sharedInstance.database!.executeStatements("DELETE FROM student_info WHERE RollNo=?")
+        sharedInstance.database!.close()
+        return isDeleted
     }
-
-    func getAllData() -> NSMutableArray {
-//        sharedInstance.database!.open()
-//        let resultSet: FMResultSet! = sharedInstance.database!.executeQuery("SELECT * FROM student_info", withArgumentsIn: nil)
-//        let marrStudentInfo : NSMutableArray = NSMutableArray()
-//        if (resultSet != nil) {
-//            while resultSet.next() {
-//                let studentInfo : AnyObject = AnyObject()
-//                studentInfo.RollNo = resultSet.string(forColumn: "RollNo")
-//                studentInfo.Name = resultSet.string(forColumn: "Name")
-//                studentInfo.Marks = resultSet.string(forColumn: "Marks")
-//                marrStudentInfo.add(studentInfo)
-//            }
-//        }
-//        sharedInstance.database!.close()
-//        return marrStudentInfo
-        return []
+    
+    func getAllData(_ tblName: String) -> NSMutableArray {
+        sharedInstance.database!.open()
+        let resultSet: FMResultSet! = sharedInstance.database!.executeQuery("SELECT * FROM \(tblName)", withArgumentsIn: nil)
+        let marrStudentInfo : NSMutableArray = NSMutableArray()
+        if (resultSet != nil) {
+            while resultSet.next() {
+                var dic = [String:Any]()
+                for i in 0..<resultSet.columnCount() {
+                    if resultSet.columnName(for: i) == "id" {
+                        dic[resultSet.columnName(for: i)] = Int(resultSet.string(forColumn: resultSet.columnName(for: i)))
+                    } else {
+                        dic[resultSet.columnName(for: i)] = resultSet.string(forColumn: resultSet.columnName(for: i))
+                    }
+                }
+                marrStudentInfo.add(dic)
+            }
+        }
+        sharedInstance.database!.close()
+        return marrStudentInfo
+    }
+    func getSpecificData(_ tblName: String,_ id: Int) -> NSMutableArray {
+        sharedInstance.database!.open()
+        let resultSet: FMResultSet! = sharedInstance.database!.executeQuery("SELECT * FROM \(tblName) WHERE id = \(id)", withArgumentsIn: nil)
+        let marrStudentInfo : NSMutableArray = NSMutableArray()
+        if (resultSet != nil) {
+            while resultSet.next() {
+                var dic = [String:Any]()
+                for i in 0..<resultSet.columnCount() {
+                    if resultSet.columnName(for: i) == "id" {
+                        dic[resultSet.columnName(for: i)] = Int(resultSet.string(forColumn: resultSet.columnName(for: i)))
+                    } else {
+                        dic[resultSet.columnName(for: i)] = resultSet.string(forColumn: resultSet.columnName(for: i))
+                    }
+                }
+                marrStudentInfo.add(dic)
+            }
+        }
+        sharedInstance.database!.close()
+        return marrStudentInfo
     }
 }

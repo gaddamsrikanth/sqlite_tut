@@ -15,7 +15,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var mUserData: NSMutableArray! = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchServerData("users/1")
+//        fetchServerData("users/1")
         self.navigationController?.isNavigationBarHidden = true
         tblStudentData.delegate = self
         tblStudentData.dataSource = self
@@ -23,7 +23,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         tblStudentData.allowsSelection = false
     }
     override func viewWillAppear(_ animated: Bool) {
-//        getStudentData()
+        getStudentData()
     }
     
     @IBAction func handleBtnInsert(_ sender: Any) {
@@ -56,7 +56,15 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func getStudentData()
     {
         mUserData = NSMutableArray()
-        mUserData = ModelManager.getInstance().getAllData()
+        
+//        if mUserData.count > 0 {
+//            let user = mUserData.object(at: mUserData.count - 1) as! User
+//            mUserData = ModelManager.getInstance().getSpecificData("user",user.id! + 1)
+//        } else {
+//            mUserData = ModelManager.getInstance().getSpecificData("user",1)
+//        }
+        mUserData = ModelManager.getInstance().getAllData("user")
+        mUserData = (Mapper<User>().mapArray(JSONArray: mUserData as! [[String: Any]])!) as! NSMutableArray
         tblStudentData.reloadData()
     }
     
@@ -65,9 +73,42 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
         }, responseDictionary: { (resultDic) in
             DispatchQueue.main.async {
-                let user: User = Mapper<User>().map(JSONObject: resultDic)!
-                self.mUserData.add(user)
-                self.tblStudentData.reloadData()
+                if resultDic.count > 0 {
+                    let user: User = Mapper<User>().map(JSONObject: resultDic)!
+                    self.mUserData.add(user)
+                    self.tblStudentData.reloadData()
+                    let columns = "id,name,username,email,phone,website"
+                    let values = "\(user.id!),\'\(user.name!)\',\'\(user.username!)\',\'\(user.email!)\',\'\(user.phone!)\',\'\(user.website!)\'"
+                    let acol = "user_id,street,suite,city,zipcode"
+                    let aval = "\(user.id!),\'\((user.address?.street!)!)\',\'\((user.address?.suite!)!)\',\'\((user.address?.city!)!)\',\'\((user.address?.zipcode!)!)\'"
+                    let gcol = "user_id,lat,lng"
+                    let gval = "\(user.id!),\'\((user.address?.geo?.lat!)!)\',\'\((user.address?.geo?.lng!)!)\'"
+                    let ccol = "user_id,name,catchPhrase,bs"
+                    let cval = "\(user.id!),\'\((user.company?.name!)!)\',\'\((user.company?.catchPhrase!)!)\',\'\((user.company?.bs!)!)\'"
+                    
+                    if ModelManager.getInstance().addData("user", columns, values) {
+                        
+                    } else {
+                        Util.invokeAlertMethod("User INSERTION", strBody: "Failed!", delegate: self)
+                    }
+                    if ModelManager.getInstance().addData("address", acol, aval) {
+                        
+                    } else {
+                        Util.invokeAlertMethod("User's address INSERTION", strBody: "Failed!", delegate: self)
+                    }
+                    if ModelManager.getInstance().addData("geo", gcol, gval) {
+                        
+                    } else {
+                        Util.invokeAlertMethod("User's location INSERTION", strBody: "Failed!", delegate: self)
+                    }
+                    if ModelManager.getInstance().addData("company", ccol, cval) {
+                        
+                    } else {
+                        Util.invokeAlertMethod("User' company INSERTION", strBody: "Failed!", delegate: self)
+                    }
+                } else {
+                    Util.invokeAlertMethod("Alert", strBody: "all users fetched!", delegate: self)
+                }
             }
         }, responseArray: { (resultArr) in
             

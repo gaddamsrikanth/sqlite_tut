@@ -326,7 +326,7 @@ typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary
  @note You cannot use this method from Swift due to incompatibilities between Swift and Objective-C variadic implementations. Consider using `<executeUpdate:values:>` instead.
  */
 
-- (BOOL)executeUpdate:(NSString*)sql, ...;
+- (BOOL)executeUpdate:(NSString*)sql;
 
 /** Execute single update statement
 
