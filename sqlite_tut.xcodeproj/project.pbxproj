@@ -14,6 +14,12 @@
 		5CDCEC401E81400D0002D556 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCEC3A1E81400D0002D556 /* Post.swift */; };
 		5CDCEC411E81400D0002D556 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCEC3B1E81400D0002D556 /* User.swift */; };
 		5CDCEC471E8144220002D556 /* REST-Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCEC461E8144220002D556 /* REST-Api.swift */; };
+		5CDCEC4E1E814F0F0002D556 /* userPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCEC4C1E814F0F0002D556 /* userPosts.swift */; };
+		5CDCEC4F1E814F0F0002D556 /* userPosts.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDCEC4D1E814F0F0002D556 /* userPosts.xib */; };
+		5CDCEC521E814FF40002D556 /* userPostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCEC501E814FF40002D556 /* userPostsCell.swift */; };
+		5CDCEC531E814FF40002D556 /* userPostsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDCEC511E814FF40002D556 /* userPostsCell.xib */; };
+		5CDCEC5A1E815D2E0002D556 /* userCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCEC581E815D2E0002D556 /* userCommentsViewController.swift */; };
+		5CDCEC5B1E815D2E0002D556 /* userCommentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDCEC591E815D2E0002D556 /* userCommentsViewController.xib */; };
 		7B14D14B1E8106A90060BF5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D14A1E8106A90060BF5F /* AppDelegate.swift */; };
 		7B14D1501E8106A90060BF5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B14D14E1E8106A90060BF5F /* Main.storyboard */; };
 		7B14D1521E8106A90060BF5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B14D1511E8106A90060BF5F /* Assets.xcassets */; };
@@ -71,6 +77,12 @@
 		5CDCEC3A1E81400D0002D556 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		5CDCEC3B1E81400D0002D556 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5CDCEC461E8144220002D556 /* REST-Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "REST-Api.swift"; sourceTree = "<group>"; };
+		5CDCEC4C1E814F0F0002D556 /* userPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userPosts.swift; sourceTree = "<group>"; };
+		5CDCEC4D1E814F0F0002D556 /* userPosts.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userPosts.xib; sourceTree = "<group>"; };
+		5CDCEC501E814FF40002D556 /* userPostsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userPostsCell.swift; sourceTree = "<group>"; };
+		5CDCEC511E814FF40002D556 /* userPostsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userPostsCell.xib; sourceTree = "<group>"; };
+		5CDCEC581E815D2E0002D556 /* userCommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCommentsViewController.swift; sourceTree = "<group>"; };
+		5CDCEC591E815D2E0002D556 /* userCommentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userCommentsViewController.xib; sourceTree = "<group>"; };
 		7B14D1471E8106A90060BF5F /* sqlite_tut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sqlite_tut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B14D14A1E8106A90060BF5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B14D14F1E8106A90060BF5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -183,6 +195,10 @@
 				7B14D1811E8107830060BF5F /* InsertRecordVC.swift */,
 				7B14D1821E8107830060BF5F /* InsertRecordVC.xib */,
 				7B14D1A21E8116B30060BF5F /* sqlite_tut-Bridging-Header.h */,
+				5CDCEC4C1E814F0F0002D556 /* userPosts.swift */,
+				5CDCEC4D1E814F0F0002D556 /* userPosts.xib */,
+				5CDCEC581E815D2E0002D556 /* userCommentsViewController.swift */,
+				5CDCEC591E815D2E0002D556 /* userCommentsViewController.xib */,
 			);
 			path = sqlite_tut;
 			sourceTree = "<group>";
@@ -210,6 +226,8 @@
 			children = (
 				7B14D17D1E81075D0060BF5F /* StudentCell.swift */,
 				7B14D17E1E81075D0060BF5F /* StudentCell.xib */,
+				5CDCEC501E814FF40002D556 /* userPostsCell.swift */,
+				5CDCEC511E814FF40002D556 /* userPostsCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -389,9 +407,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CDCEC531E814FF40002D556 /* userPostsCell.xib in Resources */,
 				7B14D1551E8106A90060BF5F /* LaunchScreen.storyboard in Resources */,
 				7B14D17B1E8107340060BF5F /* HomeVC.xib in Resources */,
+				5CDCEC4F1E814F0F0002D556 /* userPosts.xib in Resources */,
 				7B14D1841E8107830060BF5F /* InsertRecordVC.xib in Resources */,
+				5CDCEC5B1E815D2E0002D556 /* userCommentsViewController.xib in Resources */,
 				7B14D1521E8106A90060BF5F /* Assets.xcassets in Resources */,
 				7B14D1501E8106A90060BF5F /* Main.storyboard in Resources */,
 				7B14D1AB1E811ACF0060BF5F /* Student.sqlite in Resources */,
@@ -560,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B14D1831E8107830060BF5F /* InsertRecordVC.swift in Sources */,
+				5CDCEC521E814FF40002D556 /* userPostsCell.swift in Sources */,
 				7B14D1981E8114A10060BF5F /* FMDatabaseQueue.m in Sources */,
 				5CDCEC3C1E81400D0002D556 /* Address.swift in Sources */,
 				5CDCEC3D1E81400D0002D556 /* Comment.swift in Sources */,
@@ -569,12 +591,14 @@
 				7B14D1A81E811AB20060BF5F /* Photo.swift in Sources */,
 				7B14D1951E8114A10060BF5F /* FMDatabase.m in Sources */,
 				5CDCEC3E1E81400D0002D556 /* Company.swift in Sources */,
+				5CDCEC4E1E814F0F0002D556 /* userPosts.swift in Sources */,
 				7B14D1971E8114A10060BF5F /* FMDatabasePool.m in Sources */,
 				7B14D1A91E811AB20060BF5F /* Util.swift in Sources */,
 				7B14D1991E8114A10060BF5F /* FMResultSet.m in Sources */,
 				7B14D1A71E811AB20060BF5F /* ModelManager.swift in Sources */,
 				5CDCEC411E81400D0002D556 /* User.swift in Sources */,
 				5CDCEC471E8144220002D556 /* REST-Api.swift in Sources */,
+				5CDCEC5A1E815D2E0002D556 /* userCommentsViewController.swift in Sources */,
 				7B14D17A1E8107340060BF5F /* HomeVC.swift in Sources */,
 				7B14D1961E8114A10060BF5F /* FMDatabaseAdditions.m in Sources */,
 				5CDCEC3F1E81400D0002D556 /* Geo.swift in Sources */,
