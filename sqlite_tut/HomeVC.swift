@@ -55,17 +55,21 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func getStudentData()
     {
-        mUserData = NSMutableArray()
-        
-//        if mUserData.count > 0 {
-//            let user = mUserData.object(at: mUserData.count - 1) as! User
-//            mUserData = ModelManager.getInstance().getSpecificData("user",user.id! + 1)
-//        } else {
-//            mUserData = ModelManager.getInstance().getSpecificData("user",1)
-//        }
-        mUserData = ModelManager.getInstance().getAllData("user")
-        mUserData = (Mapper<User>().mapArray(JSONArray: mUserData as! [[String: Any]])!) as! NSMutableArray
-        tblStudentData.reloadData()
+//        mUserData = NSMutableArray()
+        var data:[String:Any] = [:]
+        if mUserData.count > 0 {
+            let user = mUserData.object(at: mUserData.count - 1) as! User
+            data = ModelManager.getInstance().getSpecificData("user",user.id! + 1)
+        } else {
+            data = ModelManager.getInstance().getSpecificData("user",1)
+        }
+        if data.isEmpty {
+            Util.invokeAlertMethod("Users", strBody: "All data Fetched!", delegate: self)
+        } else {
+            let user: User = Mapper<User>().map(JSONObject: data)!
+            mUserData.add(user)
+            tblStudentData.reloadData()
+        }
     }
     
     func fetchServerData(_ url: String) {

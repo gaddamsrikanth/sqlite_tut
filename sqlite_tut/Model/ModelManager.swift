@@ -58,13 +58,14 @@ class ModelManager: NSObject {
         sharedInstance.database!.close()
         return marrStudentInfo
     }
-    func getSpecificData(_ tblName: String,_ id: Int) -> NSMutableArray {
+    func getSpecificData(_ tblName: String,_ id: Int) -> [String:Any] {
         sharedInstance.database!.open()
         let resultSet: FMResultSet! = sharedInstance.database!.executeQuery("SELECT * FROM \(tblName) WHERE id = \(id)", withArgumentsIn: nil)
-        let marrStudentInfo : NSMutableArray = NSMutableArray()
+//        let marrStudentInfo : NSMutableArray = NSMutableArray()
+        var dic = [String:Any]()
         if (resultSet != nil) {
             while resultSet.next() {
-                var dic = [String:Any]()
+                
                 for i in 0..<resultSet.columnCount() {
                     if resultSet.columnName(for: i) == "id" {
                         dic[resultSet.columnName(for: i)] = Int(resultSet.string(forColumn: resultSet.columnName(for: i)))
@@ -72,10 +73,10 @@ class ModelManager: NSObject {
                         dic[resultSet.columnName(for: i)] = resultSet.string(forColumn: resultSet.columnName(for: i))
                     }
                 }
-                marrStudentInfo.add(dic)
+//                marrStudentInfo.add(dic)
             }
         }
         sharedInstance.database!.close()
-        return marrStudentInfo
+        return dic
     }
 }

@@ -31,7 +31,8 @@ class StudentCell: UITableViewCell {
         main.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func handleBtnDelete(_ sender: Any) {
-        (main as! HomeVC).fetchServerData("users/\((student as! User).id! + 1)")
+//        (main as! HomeVC).fetchServerData("users/\((student as! User).id! + 1)")
+        (main as! HomeVC).getStudentData()
         (sender as! UIButton).isHidden = true
     }
 }
