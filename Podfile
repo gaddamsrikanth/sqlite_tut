@@ -12,6 +12,7 @@ target 'sqlite_tut' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'JSQMessagesViewController'
+    pod 'SwiftGifOrigin'
   target 'sqlite_tutTests' do
     inherit! :search_paths
     # Pods for testing
