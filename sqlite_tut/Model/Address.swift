@@ -29,4 +29,3 @@ class Address: NSObject,Mappable {
     }
 }
 
-

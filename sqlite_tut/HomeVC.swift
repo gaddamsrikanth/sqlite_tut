@@ -55,8 +55,9 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func getStudentData()
     {
+        let string = "photo"
         mUserData = NSMutableArray()
-        mUserData = ModelManager.getInstance().getAllData()
+        mUserData = ModelManager.getInstance().getAllData(string,0)
         tblStudentData.reloadData()
     }
     

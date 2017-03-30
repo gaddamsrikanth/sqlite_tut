@@ -40,7 +40,7 @@ class userCommentsViewController: UIViewController,UITableViewDelegate,UITableVi
         }, responseDictionary: { (resp) in
             print(resp)
         }) { (result) in
-            self.commentList = Mapper<Comment>().mapArray(JSONArray: result as! [[String : Any]])!
+            self.commentList = Mapper<Comment>().mapArray(JSONArray: [result as! [String : Any]])!
             self.tblvw.reloadData()
         }
     

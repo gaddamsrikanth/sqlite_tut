@@ -7,6 +7,7 @@ target 'sqlite_tut' do
 
   # Pods for sqlite_tut
 	pod ‘ObjectMapper’
+    pod 'SDWebImage'
   target 'sqlite_tutTests' do
     inherit! :search_paths
     # Pods for testing

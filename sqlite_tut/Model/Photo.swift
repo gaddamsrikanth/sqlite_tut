@@ -9,7 +9,7 @@ class Photo: NSObject,Mappable {
     var id: Int?
     var title: String?
     var url: String?
-    var thumbnaiUrl: String?
+    var thumbnailUrl: String?
     
     required override  init() {
         super.init()
@@ -25,7 +25,7 @@ class Photo: NSObject,Mappable {
         id              <- map["id"]
         title           <- map["title"]
         url             <- map["url"]
-        thumbnaiUrl     <- map["thumbnaiUrl"]
+        thumbnailUrl    <- map["thumbnailUrl"]
     }
 }
 

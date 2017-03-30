@@ -16,13 +16,15 @@ class ModelManager: NSObject {
         return sharedInstance
     }
     
-    func addData(_ studentInfo: AnyObject) -> Bool {
-//        sharedInstance.database!.open()
-//        let isInserted = sharedInstance.database!.executeUpdate("INSERT INTO student_info (Name, Marks) VALUES (?, ?)", withArgumentsIn: [studentInfo.Name, studentInfo.Marks])
-//        sharedInstance.database!.close()
-//        return isInserted
-        return true
-
+    func addData(_ tblName: String,_ columns: String,_ values : String) -> Bool {
+        sharedInstance.database!.open()
+        
+        let val = String(values.characters.filter { !"\n".characters.contains($0) })
+        
+        
+        let isInserted = sharedInstance.database!.executeStatements("INSERT INTO \(tblName) (\(columns)) VALUES (\(val))")
+        sharedInstance.database!.close()
+        return isInserted
     }
    
     func updateData(_ studentInfo: AnyObject) -> Bool {
@@ -42,21 +44,34 @@ class ModelManager: NSObject {
 
     }
 
-    func getAllData() -> NSMutableArray {
-//        sharedInstance.database!.open()
-//        let resultSet: FMResultSet! = sharedInstance.database!.executeQuery("SELECT * FROM student_info", withArgumentsIn: nil)
-//        let marrStudentInfo : NSMutableArray = NSMutableArray()
-//        if (resultSet != nil) {
-//            while resultSet.next() {
-//                let studentInfo : AnyObject = AnyObject()
-//                studentInfo.RollNo = resultSet.string(forColumn: "RollNo")
-//                studentInfo.Name = resultSet.string(forColumn: "Name")
-//                studentInfo.Marks = resultSet.string(forColumn: "Marks")
-//                marrStudentInfo.add(studentInfo)
-//            }
-//        }
-//        sharedInstance.database!.close()
-//        return marrStudentInfo
-        return []
+    func getAllData(_ tblName: String, _ row: Int) -> NSMutableArray {
+        sharedInstance.database!.open()
+        let resultSet: FMResultSet! = sharedInstance.database!.executeQuery("SELECT * FROM \(tblName) limit \(row)", withArgumentsIn: nil)
+        let marrStudentInfo : NSMutableArray = NSMutableArray()
+        if (resultSet != nil) {
+            while resultSet.next() {
+                var dic:[String:Any]? = [:]
+                for i in 0..<resultSet.columnCount() {
+                    if resultSet.columnName(for : i).lowercased().contains("id"){
+                        dic?[String(resultSet.columnName(for: i))] = Int(resultSet.string(forColumn: resultSet.columnName(for: i)))
+                    } else {
+                        dic?[String(resultSet.columnName(for: i))] = resultSet.string(forColumn: resultSet.columnName(for: i))
+                    }
+                }
+                marrStudentInfo.add(dic!)
+            }
+        }
+        sharedInstance.database!.close()
+        return marrStudentInfo
+    }
+
+    func check(_ tblName: String,_ albumId : Int ) -> Bool {
+        sharedInstance.database!.open()
+        let resultSet: FMResultSet! = sharedInstance.database!.executeQuery("SELECT * FROM \(tblName)  where albumId = \(albumId)", withArgumentsIn: nil)
+        if (resultSet.next() == true) {
+            return true
+        } else {
+            return false
+        }
     }
 }

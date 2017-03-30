@@ -14,6 +14,7 @@ class Util: NSObject {
     
     class func copyFile(_ fileName: NSString) {
         let dbPath: String = getPath(fileName as String)
+        print(dbPath)
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: dbPath) {
             

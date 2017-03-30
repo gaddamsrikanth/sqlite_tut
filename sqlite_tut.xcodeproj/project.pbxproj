@@ -43,6 +43,12 @@
 		7B14D1A81E811AB20060BF5F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D1A51E811AB20060BF5F /* Photo.swift */; };
 		7B14D1A91E811AB20060BF5F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D1A61E811AB20060BF5F /* Util.swift */; };
 		7B14D1AB1E811ACF0060BF5F /* Student.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7B14D1AA1E811ACF0060BF5F /* Student.sqlite */; };
+		7D5D13AD1E8CCDB6001233F7 /* pixabayDeomo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D13AC1E8CCDB6001233F7 /* pixabayDeomo.swift */; };
+		7D5D13AF1E8CCE12001233F7 /* Hits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5D13AE1E8CCE12001233F7 /* Hits.swift */; };
+		7DF135861E823E30004A8E7A /* photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF135841E823E30004A8E7A /* photos.swift */; };
+		7DF135871E823E30004A8E7A /* photos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DF135851E823E30004A8E7A /* photos.xib */; };
+		7DF1359A1E824104004A8E7A /* photoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF135981E824104004A8E7A /* photoCell.swift */; };
+		7DF1359B1E824104004A8E7A /* photoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DF135991E824104004A8E7A /* photoCell.xib */; };
 		8B06B510C815B33D9FA62A12 /* Pods_sqlite_tutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F797FE3F2682BEDC1CAF3167 /* Pods_sqlite_tutTests.framework */; };
 		9A64B68F0DE965F68F40FC78 /* Pods_sqlite_tutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33151223944C087BF431C055 /* Pods_sqlite_tutUITests.framework */; };
 		DEE885DC396AA4B6D8E3B461 /* Pods_sqlite_tut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10D0B76C7A23F100817EA18 /* Pods_sqlite_tut.framework */; };
@@ -76,7 +82,7 @@
 		5CDCEC391E81400D0002D556 /* Geo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geo.swift; sourceTree = "<group>"; };
 		5CDCEC3A1E81400D0002D556 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		5CDCEC3B1E81400D0002D556 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5CDCEC461E8144220002D556 /* REST-Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "REST-Api.swift"; sourceTree = "<group>"; };
+		5CDCEC461E8144220002D556 /* REST-Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "REST-Api.swift"; path = "sqlite_tut/REST-Api.swift"; sourceTree = "<group>"; };
 		5CDCEC4C1E814F0F0002D556 /* userPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userPosts.swift; sourceTree = "<group>"; };
 		5CDCEC4D1E814F0F0002D556 /* userPosts.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userPosts.xib; sourceTree = "<group>"; };
 		5CDCEC501E814FF40002D556 /* userPostsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userPostsCell.swift; sourceTree = "<group>"; };
@@ -84,11 +90,11 @@
 		5CDCEC581E815D2E0002D556 /* userCommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCommentsViewController.swift; sourceTree = "<group>"; };
 		5CDCEC591E815D2E0002D556 /* userCommentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userCommentsViewController.xib; sourceTree = "<group>"; };
 		7B14D1471E8106A90060BF5F /* sqlite_tut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sqlite_tut.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B14D14A1E8106A90060BF5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7B14D14A1E8106A90060BF5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = sqlite_tut/AppDelegate.swift; sourceTree = "<group>"; };
 		7B14D14F1E8106A90060BF5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7B14D1511E8106A90060BF5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B14D1511E8106A90060BF5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = sqlite_tut/Assets.xcassets; sourceTree = "<group>"; };
 		7B14D1541E8106A90060BF5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7B14D1561E8106A90060BF5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B14D1561E8106A90060BF5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = sqlite_tut/Info.plist; sourceTree = "<group>"; };
 		7B14D15B1E8106AA0060BF5F /* sqlite_tutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sqlite_tutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B14D15F1E8106AA0060BF5F /* sqlite_tutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sqlite_tutTests.swift; sourceTree = "<group>"; };
 		7B14D1611E8106AA0060BF5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,11 +120,17 @@
 		7B14D1921E8114A10060BF5F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		7B14D1931E8114A10060BF5F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		7B14D1941E8114A10060BF5F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B14D1A21E8116B30060BF5F /* sqlite_tut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sqlite_tut-Bridging-Header.h"; sourceTree = "<group>"; };
+		7B14D1A21E8116B30060BF5F /* sqlite_tut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "sqlite_tut-Bridging-Header.h"; path = "sqlite_tut/sqlite_tut-Bridging-Header.h"; sourceTree = "<group>"; };
 		7B14D1A41E811AB20060BF5F /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		7B14D1A51E811AB20060BF5F /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7B14D1A61E811AB20060BF5F /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		7B14D1AA1E811ACF0060BF5F /* Student.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Student.sqlite; sourceTree = "<group>"; };
+		7D5D13AC1E8CCDB6001233F7 /* pixabayDeomo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pixabayDeomo.swift; sourceTree = "<group>"; };
+		7D5D13AE1E8CCE12001233F7 /* Hits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hits.swift; sourceTree = "<group>"; };
+		7DF135841E823E30004A8E7A /* photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photos.swift; sourceTree = "<group>"; };
+		7DF135851E823E30004A8E7A /* photos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photos.xib; sourceTree = "<group>"; };
+		7DF135981E824104004A8E7A /* photoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoCell.swift; sourceTree = "<group>"; };
+		7DF135991E824104004A8E7A /* photoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photoCell.xib; sourceTree = "<group>"; };
 		845BBF12ECF7C55C7D43413A /* Pods-sqlite_tutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tutUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tutUITests/Pods-sqlite_tutUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A10D0B76C7A23F100817EA18 /* Pods_sqlite_tut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sqlite_tut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB5ABFCC2DF37738690CEA /* Pods-sqlite_tut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tut.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tut/Pods-sqlite_tut.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,8 +170,8 @@
 		7B14D13E1E8106A90060BF5F = {
 			isa = PBXGroup;
 			children = (
-				7B14D1AA1E811ACF0060BF5F /* Student.sqlite */,
-				7B14D1881E8114A10060BF5F /* fmdb */,
+				7B14D14A1E8106A90060BF5F /* AppDelegate.swift */,
+				5CDCEC461E8144220002D556 /* REST-Api.swift */,
 				7B14D1491E8106A90060BF5F /* sqlite_tut */,
 				7B14D15E1E8106AA0060BF5F /* sqlite_tutTests */,
 				7B14D1691E8106AA0060BF5F /* sqlite_tutUITests */,
@@ -182,23 +194,10 @@
 		7B14D1491E8106A90060BF5F /* sqlite_tut */ = {
 			isa = PBXGroup;
 			children = (
-				5CDCEC461E8144220002D556 /* REST-Api.swift */,
-				7B14D1A31E811AB20060BF5F /* Model */,
+				7D5D13A41E8CCA8E001233F7 /* SupportFile */,
+				7D5D13A71E8CCAFF001233F7 /* MVC */,
 				7B14D17C1E81073A0060BF5F /* cell */,
-				7B14D14A1E8106A90060BF5F /* AppDelegate.swift */,
-				7B14D14E1E8106A90060BF5F /* Main.storyboard */,
-				7B14D1511E8106A90060BF5F /* Assets.xcassets */,
-				7B14D1531E8106A90060BF5F /* LaunchScreen.storyboard */,
-				7B14D1561E8106A90060BF5F /* Info.plist */,
-				7B14D1781E8107340060BF5F /* HomeVC.swift */,
-				7B14D1791E8107340060BF5F /* HomeVC.xib */,
-				7B14D1811E8107830060BF5F /* InsertRecordVC.swift */,
-				7B14D1821E8107830060BF5F /* InsertRecordVC.xib */,
-				7B14D1A21E8116B30060BF5F /* sqlite_tut-Bridging-Header.h */,
-				5CDCEC4C1E814F0F0002D556 /* userPosts.swift */,
-				5CDCEC4D1E814F0F0002D556 /* userPosts.xib */,
-				5CDCEC581E815D2E0002D556 /* userCommentsViewController.swift */,
-				5CDCEC591E815D2E0002D556 /* userCommentsViewController.xib */,
+				7D5D13AA1E8CCB9E001233F7 /* Resources */,
 			);
 			path = sqlite_tut;
 			sourceTree = "<group>";
@@ -228,6 +227,8 @@
 				7B14D17E1E81075D0060BF5F /* StudentCell.xib */,
 				5CDCEC501E814FF40002D556 /* userPostsCell.swift */,
 				5CDCEC511E814FF40002D556 /* userPostsCell.xib */,
+				7DF135981E824104004A8E7A /* photoCell.swift */,
+				7DF135991E824104004A8E7A /* photoCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -274,8 +275,90 @@
 				7B14D1A41E811AB20060BF5F /* ModelManager.swift */,
 				7B14D1A51E811AB20060BF5F /* Photo.swift */,
 				7B14D1A61E811AB20060BF5F /* Util.swift */,
+				7D5D13AE1E8CCE12001233F7 /* Hits.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7D5D13A41E8CCA8E001233F7 /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				7D5D13A51E8CCAB4001233F7 /* DefaultFile */,
+				7D5D13A61E8CCAD0001233F7 /* Library */,
+			);
+			name = SupportFile;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		7D5D13A51E8CCAB4001233F7 /* DefaultFile */ = {
+			isa = PBXGroup;
+			children = (
+				7B14D14E1E8106A90060BF5F /* Main.storyboard */,
+				7B14D1531E8106A90060BF5F /* LaunchScreen.storyboard */,
+				7B14D1AA1E811ACF0060BF5F /* Student.sqlite */,
+				7B14D1511E8106A90060BF5F /* Assets.xcassets */,
+				7B14D1561E8106A90060BF5F /* Info.plist */,
+				7B14D1A21E8116B30060BF5F /* sqlite_tut-Bridging-Header.h */,
+			);
+			name = DefaultFile;
+			sourceTree = "<group>";
+		};
+		7D5D13A61E8CCAD0001233F7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				7B14D1881E8114A10060BF5F /* fmdb */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		7D5D13A71E8CCAFF001233F7 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				7B14D1A31E811AB20060BF5F /* Model */,
+				7D5D13A81E8CCB06001233F7 /* View */,
+				7D5D13A91E8CCB0F001233F7 /* Controller */,
+			);
+			name = MVC;
+			sourceTree = "<group>";
+		};
+		7D5D13A81E8CCB06001233F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7B14D1821E8107830060BF5F /* InsertRecordVC.xib */,
+				5CDCEC4D1E814F0F0002D556 /* userPosts.xib */,
+				5CDCEC591E815D2E0002D556 /* userCommentsViewController.xib */,
+				7B14D1791E8107340060BF5F /* HomeVC.xib */,
+				7DF135851E823E30004A8E7A /* photos.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7D5D13A91E8CCB0F001233F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5CDCEC581E815D2E0002D556 /* userCommentsViewController.swift */,
+				5CDCEC4C1E814F0F0002D556 /* userPosts.swift */,
+				7B14D1811E8107830060BF5F /* InsertRecordVC.swift */,
+				7DF135841E823E30004A8E7A /* photos.swift */,
+				7B14D1781E8107340060BF5F /* HomeVC.swift */,
+				7D5D13AC1E8CCDB6001233F7 /* pixabayDeomo.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7D5D13AA1E8CCB9E001233F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7D5D13AB1E8CCBB5001233F7 /* images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7D5D13AB1E8CCBB5001233F7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		E0FB91A223625711A9B0DAFC /* Pods */ = {
@@ -408,11 +491,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CDCEC531E814FF40002D556 /* userPostsCell.xib in Resources */,
+				7DF135871E823E30004A8E7A /* photos.xib in Resources */,
 				7B14D1551E8106A90060BF5F /* LaunchScreen.storyboard in Resources */,
 				7B14D17B1E8107340060BF5F /* HomeVC.xib in Resources */,
 				5CDCEC4F1E814F0F0002D556 /* userPosts.xib in Resources */,
 				7B14D1841E8107830060BF5F /* InsertRecordVC.xib in Resources */,
 				5CDCEC5B1E815D2E0002D556 /* userCommentsViewController.xib in Resources */,
+				7DF1359B1E824104004A8E7A /* photoCell.xib in Resources */,
 				7B14D1521E8106A90060BF5F /* Assets.xcassets in Resources */,
 				7B14D1501E8106A90060BF5F /* Main.storyboard in Resources */,
 				7B14D1AB1E811ACF0060BF5F /* Student.sqlite in Resources */,
@@ -581,11 +666,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B14D1831E8107830060BF5F /* InsertRecordVC.swift in Sources */,
+				7D5D13AF1E8CCE12001233F7 /* Hits.swift in Sources */,
 				5CDCEC521E814FF40002D556 /* userPostsCell.swift in Sources */,
 				7B14D1981E8114A10060BF5F /* FMDatabaseQueue.m in Sources */,
+				7DF135861E823E30004A8E7A /* photos.swift in Sources */,
 				5CDCEC3C1E81400D0002D556 /* Address.swift in Sources */,
 				5CDCEC3D1E81400D0002D556 /* Comment.swift in Sources */,
 				5CDCEC401E81400D0002D556 /* Post.swift in Sources */,
+				7D5D13AD1E8CCDB6001233F7 /* pixabayDeomo.swift in Sources */,
 				7B14D17F1E81075D0060BF5F /* StudentCell.swift in Sources */,
 				7B14D14B1E8106A90060BF5F /* AppDelegate.swift in Sources */,
 				7B14D1A81E811AB20060BF5F /* Photo.swift in Sources */,
@@ -599,6 +687,7 @@
 				5CDCEC411E81400D0002D556 /* User.swift in Sources */,
 				5CDCEC471E8144220002D556 /* REST-Api.swift in Sources */,
 				5CDCEC5A1E815D2E0002D556 /* userCommentsViewController.swift in Sources */,
+				7DF1359A1E824104004A8E7A /* photoCell.swift in Sources */,
 				7B14D17A1E8107340060BF5F /* HomeVC.swift in Sources */,
 				7B14D1961E8114A10060BF5F /* FMDatabaseAdditions.m in Sources */,
 				5CDCEC3F1E81400D0002D556 /* Geo.swift in Sources */,
@@ -643,6 +732,7 @@
 				7B14D14F1E8106A90060BF5F /* Base */,
 			);
 			name = Main.storyboard;
+			path = sqlite_tut;
 			sourceTree = "<group>";
 		};
 		7B14D1531E8106A90060BF5F /* LaunchScreen.storyboard */ = {
@@ -651,6 +741,7 @@
 				7B14D1541E8106A90060BF5F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = sqlite_tut;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

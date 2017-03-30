@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let navController = UINavigationController()
         
-        navController.pushViewController(userPosts(), animated: true)
+        navController.pushViewController(photos(), animated: true)
         
         self.window!.rootViewController = navController
         self.window!.makeKeyAndVisible()
