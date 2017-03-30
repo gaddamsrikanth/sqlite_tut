@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18159AF2B9397920905BDE41FAF80F97"
+               BlueprintIdentifier = "A6C7EB3124B0EA6E168137B7E755D16D"
                BuildableName = "Pods_sqlite_tut.framework"
                BlueprintName = "Pods-sqlite_tut"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18159AF2B9397920905BDE41FAF80F97"
+            BlueprintIdentifier = "A6C7EB3124B0EA6E168137B7E755D16D"
             BuildableName = "Pods_sqlite_tut.framework"
             BlueprintName = "Pods-sqlite_tut"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18159AF2B9397920905BDE41FAF80F97"
-            BuildableName = "Pods_sqlite_tut.framework"
-            BlueprintName = "Pods-sqlite_tut"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
