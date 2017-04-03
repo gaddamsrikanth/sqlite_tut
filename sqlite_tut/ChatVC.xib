@@ -1,12 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatVC" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatVC" customModule="sqlite_tut" customModuleProvider="target">
             <connections>
+                <outlet property="selectorVW" destination="k9p-3P-Kxc" id="4b9-24-DU6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,5 +22,54 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </view>
+        <view contentMode="scaleToFill" id="k9p-3P-Kxc">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxhead.png" translatesAutoresizingMaskIntoConstraints="NO" id="RhL-IU-CHU">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="75"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJv-wc-rVa">
+                    <rect key="frame" x="29" y="3" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="JJv-wc-rVa" secondAttribute="height" multiplier="1:1" id="WpH-LW-iaT"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="videoicon.png"/>
+                    <connections>
+                        <action selector="selectVideo:" destination="-1" eventType="touchUpInside" id="PQW-Qg-5Oc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaQ-hc-WCZ">
+                    <rect key="frame" x="116" y="5" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="DaQ-hc-WCZ" secondAttribute="height" multiplier="1:1" id="e03-ZC-Ocm"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="imgicon.png"/>
+                    <connections>
+                        <action selector="selectImage:" destination="-1" eventType="touchUpInside" id="VQy-Em-A83"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="DaQ-hc-WCZ" firstAttribute="top" secondItem="k9p-3P-Kxc" secondAttribute="top" constant="5" id="42J-tw-Vov"/>
+                <constraint firstAttribute="trailing" secondItem="DaQ-hc-WCZ" secondAttribute="trailing" constant="34" id="6gL-Ji-gMc"/>
+                <constraint firstAttribute="bottom" secondItem="RhL-IU-CHU" secondAttribute="bottom" id="9Lh-1K-Fn4"/>
+                <constraint firstAttribute="bottom" secondItem="DaQ-hc-WCZ" secondAttribute="bottom" constant="20" id="Hig-Dj-vN2"/>
+                <constraint firstAttribute="trailing" secondItem="RhL-IU-CHU" secondAttribute="trailing" id="SD8-cZ-azm"/>
+                <constraint firstItem="JJv-wc-rVa" firstAttribute="leading" secondItem="k9p-3P-Kxc" secondAttribute="leading" constant="29" id="Tf4-F3-S1A"/>
+                <constraint firstItem="JJv-wc-rVa" firstAttribute="top" secondItem="k9p-3P-Kxc" secondAttribute="top" constant="3" id="Y7n-eD-fP8"/>
+                <constraint firstAttribute="bottom" secondItem="JJv-wc-rVa" secondAttribute="bottom" constant="22" id="cGA-hb-QDW"/>
+                <constraint firstItem="RhL-IU-CHU" firstAttribute="top" secondItem="k9p-3P-Kxc" secondAttribute="top" id="l4U-eg-wQ4"/>
+                <constraint firstItem="RhL-IU-CHU" firstAttribute="leading" secondItem="k9p-3P-Kxc" secondAttribute="leading" id="t3e-4M-Dsf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-51" y="-437.5"/>
+        </view>
     </objects>
+    <resources>
+        <image name="boxhead.png" width="200" height="75"/>
+        <image name="imgicon.png" width="50" height="50"/>
+        <image name="videoicon.png" width="50" height="50"/>
+    </resources>
 </document>

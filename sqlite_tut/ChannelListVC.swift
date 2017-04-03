@@ -5,18 +5,17 @@ import ObjectMapper
 class ChannelListVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     // MARK: Properties
-    var senderDisplayName: String?
+    var senderDisplayName: String? // Logged in username
     private var channels: [Channel] = []
     
     @IBOutlet var btnCreate: UIButton!
     @IBOutlet var txfNewChannelName: UITextField!
     @IBOutlet var tblChannelList: UITableView!
-    private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
-    private var channelRefHandle: FIRDatabaseHandle?
+    private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels") //firebase database reference for channels
+    private var channelRefHandle: FIRDatabaseHandle? //Channel Reference handler
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
         tblChannelList.delegate = self
         tblChannelList.dataSource = self
         tblChannelList.register(UINib(nibName: "ChannelCell", bundle: nil), forCellReuseIdentifier: "ChannelCell")
@@ -26,6 +25,7 @@ class ChannelListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     deinit {

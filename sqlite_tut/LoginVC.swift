@@ -34,6 +34,7 @@ class LoginVC: UIViewController {
         if (txfUsername.text?.isEmpty)! {
             Util.invokeAlertMethod("Required", strBody: "Username required", delegate: self)
         } else {
+            //Firebase Authentication
             FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in // 2
                 if let err = error { // 3
                     print(err.localizedDescription)

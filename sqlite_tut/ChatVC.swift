@@ -5,8 +5,10 @@ import Photos
 
 class ChatVC: JSQMessagesViewController {
 
+    @IBOutlet var selectorVW: UIView!
     var channelRef: FIRDatabaseReference?
     var channel: Channel?
+    var cView,transperentView: UIView!
     var messages = [JSQMessage]()
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
@@ -30,6 +32,7 @@ class ChatVC: JSQMessagesViewController {
     lazy var storageRef: FIRStorageReference = FIRStorage.storage().reference(forURL: "gs://sqlitetut.appspot.com/")
     private let imageURLNotSetKey = "NOTSET"
     private var photoMessageMap = [String: JSQPhotoMediaItem]()
+    private var videoMessageMap = [String: JSQVideoMediaItem]()
     private var updatedMessageRefHandle: FIRDatabaseHandle?
     
     deinit {
@@ -48,6 +51,11 @@ class ChatVC: JSQMessagesViewController {
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         observeMessages()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -123,15 +131,31 @@ class ChatVC: JSQMessagesViewController {
     }
     
     override func didPressAccessoryButton(_ sender: UIButton) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
-            picker.sourceType = UIImagePickerControllerSourceType.camera
-        } else {
-            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        }
+//        let picker = UIImagePickerController()
+//        picker.delegate = self
+//        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+//            picker.sourceType = UIImagePickerControllerSourceType.camera
+//        } else {
+//            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+//        }
+//        present(picker, animated: true, completion:nil)
         
-        present(picker, animated: true, completion:nil)
+        selectorVW.frame = CGRect(x: 10, y: UIScreen.main.bounds.size.height - 35 - selectorVW.frame.height, width: selectorVW.frame.width, height: selectorVW.frame.height)
+        self.transperentView = UIView(frame: UIScreen.main.bounds)
+        self.transperentView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        if !self.view.subviews.contains(self.transperentView) {
+            self.view.addSubview(self.transperentView)
+        }
+        self.view.addSubview(selectorVW)
+        self.cView = selectorVW
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapHandler))
+        tap.cancelsTouchesInView = false
+        self.transperentView.addGestureRecognizer(tap)
+    }
+    
+    func tapHandler(){
+        self.cView.removeFromSuperview()
+        self.transperentView.removeFromSuperview()
     }
     
     private func addMessage(withId id: String, name: String, text: String) {
@@ -264,6 +288,20 @@ class ChatVC: JSQMessagesViewController {
     override func textViewDidChange(_ textView: UITextView) {
         super.textViewDidChange(textView)
         isTyping = textView.text != ""
+    }
+    
+    //MARK: IBAction Methods
+    
+    @IBAction func selectVideo(_ sender: Any) {
+        let vc = MediaSelectorVC()
+        vc.type = 1
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func selectImage(_ sender: Any) {
+        let vc = MediaSelectorVC()
+        vc.type = 2
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
