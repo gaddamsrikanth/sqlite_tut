@@ -19,14 +19,62 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "sqlite_tut/MediaSelectorVC.swift"
-            timestampString = "512907671.43876"
+            filePath = "sqlite_tut/ChatVC.swift"
+            timestampString = "512917969.345488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "selectorMethod()"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "sqlite_tut/ChatVC.swift"
+            timestampString = "512917969.345488"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sqlite_tut.ChatVC.imagePickerController (__ObjC.UIImagePickerController, didFinishPickingMediaWithInfo : Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "sqlite_tut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itilak/Desktop/sqlite_tut/sqlite_tut/ChatVC.swift"
+                  timestampString = "512917969.654481"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "333"
+                  endingLineNumber = "333"
+                  offsetFromSymbolStart = "1236">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sqlite_tut.ChatVC.(imagePickerController (__ObjC.UIImagePickerController, didFinishPickingMediaWithInfo : Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "sqlite_tut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itilak/Desktop/sqlite_tut/sqlite_tut/ChatVC.swift"
+                  timestampString = "512917969.661688"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "334"
+                  endingLineNumber = "334"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

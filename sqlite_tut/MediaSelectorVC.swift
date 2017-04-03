@@ -1,6 +1,7 @@
 import UIKit
 import Photos
 import PhotosUI
+import Firebase
 
 class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
 
@@ -8,12 +9,16 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var lblSelectedItems: UILabel!
     @IBOutlet var CltnVW: UICollectionView!
+    @IBOutlet var checkBtn: UIButton!
+
     
     var type: Int!
+    var selectedAssets: [PHAsset]! = []
     var result: PHFetchResult<PHAsset>!
     fileprivate let imageManager = PHCachingImageManager()
     var fetchResult: PHFetchResult<PHAsset>!
     fileprivate var previousPreheatRect = CGRect.zero
+    var mulSelection: Bool? = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +36,6 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
         
         fetchAssest()
         
-//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 10)
-//        layout.itemSize = CGSize(width: 100, height: 100)
-//        
-//        CltnVW = UICollectionView(frame: self.CltnVW.frame, collectionViewLayout: layout)
         CltnVW.delegate = self
         CltnVW.dataSource = self
         CltnVW.register(UINib(nibName: "AssestCell", bundle: nil), forCellWithReuseIdentifier: "AssestCell")
@@ -67,7 +67,6 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
                 
                 cell.imgView.image = image
                 cell.lblText.text = String(format: "%02d:%02d",Int((asset.duration / 60)),Int(asset.duration) % 60)
-                cell.checkBoxImgVW.isHidden = true
                 cell.checked = false
             }
             break
@@ -75,33 +74,62 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
             cell.imgView.image = getAssetThumbnail(asset: asset)
             cell.lblText.text = ""
             cell.checked = false
-            cell.checkBoxImgVW.isHidden = true
             break
         }
-        
+        if mulSelection! {
+            cell.checkBoxImgVW.isHidden = false
+        } else {
+            cell.checkBoxImgVW.isHidden = true
+        }
+        cell.checkBoxImgVW.image = UIImage(named: "unchecked")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView.allowsMultipleSelection {
-            let cell = collectionView.cellForItem(at: indexPath) as! AssestCell
-            if cell.checkBoxImgVW.isHidden {
-                cell.checkBoxImgVW.isHidden = false
-                cell.checkBoxImgVW.image = UIImage(named: "checked")
-                cell.checked = true
+        let cell = collectionView.cellForItem(at: indexPath) as! AssestCell
+        if mulSelection! {
+            if cell.checked! {
+                cell.checkBoxImgVW.image = UIImage(named: "unchecked")
+                selectedAssets = selectedAssets.filter{$0 != result.object(at: indexPath.row)}
             } else {
-                if cell.checked! {
-                    cell.checkBoxImgVW.image = UIImage(named: "unchecked")
-                    cell.checked = false
-                } else {
-                    cell.checked = true
-                    cell.checkBoxImgVW.image = UIImage(named: "checked")
-                }
+                cell.checkBoxImgVW.image = UIImage(named: "checked")
+                selectedAssets.append(result.object(at: indexPath.row))
             }
-            
+            cell.checked = !cell.checked
         } else {
-            
+            switch type {
+            case 1:
+                break
+            default:
+                let vc = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 2] as! ChatVC
+                DispatchQueue.main.async {
+                    if let key = vc.sendPhotoMessage() {
+                        // 4
+                        self.result.object(at: indexPath.row).requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
+                            let imageFileURL = contentEditingInput?.fullSizeImageURL
+                            
+                            // 5
+                            let path = "\(FIRAuth.auth()?.currentUser?.uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(self.result.object(at: indexPath.row).value(forKey: "filename"))"
+                            
+                            // 6
+                            vc.storageRef.child(path).putFile(imageFileURL!, metadata: nil) { (metadata, error) in
+                                if let error = error {
+                                    print("Error uploading photo: \(error.localizedDescription)")
+                                    return
+                                }
+                                // 7
+                                vc.setImageURL(vc.storageRef.child((metadata?.path)!).description, forPhotoMessageWithKey: key)
+                            }
+                        })
+                    }
+                }
+                if let nav = self.navigationController {
+                    nav.popViewController(animated: true)
+                }
+                break
+            }
         }
+
     }
     
     func selectorMethod(){
@@ -110,9 +138,40 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
     
     //MARK: IBAction methods
     @IBAction func sendAssets(_ sender: Any) {
-        
+        let vc = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 2] as! ChatVC
+        DispatchQueue.main.async {
+            for pic in self.selectedAssets {
+                if let key = vc.sendPhotoMessage() {
+                    pic.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
+                        let imageFileURL = contentEditingInput?.fullSizeImageURL
+                    
+                        let path = "\(FIRAuth.auth()?.currentUser?.uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(pic.value(forKey: "filename"))"
+                            vc.storageRef.child(path).putFile(imageFileURL!, metadata: nil) { (metadata, error) in
+                            if let error = error {
+                                print("Error uploading photo: \(error.localizedDescription)")
+                                return
+                            }
+                            vc.setImageURL(vc.storageRef.child((metadata?.path)!).description, forPhotoMessageWithKey: key)
+                        }
+                    })
+                }
+            }
+        }
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        }
     }
     
+    @IBAction func handleCheckBtn(_ sender: Any) {
+        if !mulSelection!{
+            checkBtn.setImage(UIImage(named: "checked"), for: .normal)
+            mulSelection = true
+        } else {
+            checkBtn.setImage(UIImage(named: "unchecked"), for: .normal)
+            mulSelection = false
+        }
+        CltnVW.reloadData()
+    }
     @IBAction func handleBtnBack(_ sender: Any) {
         if let nav = self.navigationController {
             nav.popViewController(animated: true)

@@ -84,12 +84,16 @@ class ChatVC: JSQMessagesViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         let message = messages[indexPath.item]
-        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 20))
         if message.senderId == senderId {
             cell.textView?.textColor = UIColor.white
         } else {
             cell.textView?.textColor = UIColor.black
+            let lbl = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+            lbl.text = message.senderDisplayName
+            view.addSubview(lbl)
         }
+        cell.contentView.addSubview(view)
         return cell
     }
     
@@ -295,12 +299,14 @@ class ChatVC: JSQMessagesViewController {
     @IBAction func selectVideo(_ sender: Any) {
         let vc = MediaSelectorVC()
         vc.type = 1
+        tapHandler()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func selectImage(_ sender: Any) {
         let vc = MediaSelectorVC()
         vc.type = 2
+        tapHandler()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
