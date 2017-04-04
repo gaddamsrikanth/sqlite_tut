@@ -10,8 +10,8 @@ import UIKit
 
 class userPostsCell: UITableViewCell {
 
-    @IBOutlet var titleLbl: UILabel!
-    @IBOutlet var bodyLbl: UILabel!
+    @IBOutlet var lbl1: UILabel!
+    @IBOutlet var pclbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -20,6 +20,29 @@
 		5CDCEC531E814FF40002D556 /* userPostsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDCEC511E814FF40002D556 /* userPostsCell.xib */; };
 		5CDCEC5A1E815D2E0002D556 /* userCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCEC581E815D2E0002D556 /* userCommentsViewController.swift */; };
 		5CDCEC5B1E815D2E0002D556 /* userCommentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDCEC591E815D2E0002D556 /* userCommentsViewController.xib */; };
+		5CE863771E8D0158005FAD62 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B14D1861E81146B0060BF5F /* libsqlite3.0.tbd */; };
+		5CECDD711E8E389C00A5E013 /* CardIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CECDD661E8E389C00A5E013 /* CardIO.m */; };
+		5CECDD8F1E8E394E00A5E013 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE8636D1E8CDB22005FAD62 /* libxml2.tbd */; };
+		5CECDDB21E8E3DDB00A5E013 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CECDD941E8E3BE200A5E013 /* libPayPalMobile.a */; };
+		5CECDDB41E8E412000A5E013 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CECDDB31E8E412000A5E013 /* WebKit.framework */; };
+		5CECDDB51E8E412600A5E013 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE863671E8CDAF2005FAD62 /* MobileCoreServices.framework */; };
+		5CECDDB61E8E443D00A5E013 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE8634F1E8CDA32005FAD62 /* Accelerate.framework */; };
+		5CECDDB71E8E443D00A5E013 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE863501E8CDA32005FAD62 /* AudioToolbox.framework */; };
+		5CECDDB81E8E443D00A5E013 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE863511E8CDA32005FAD62 /* AVFoundation.framework */; };
+		5CECDDB91E8E443D00A5E013 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE863521E8CDA32005FAD62 /* CoreGraphics.framework */; };
+		5CECDDBA1E8E443D00A5E013 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE863531E8CDA32005FAD62 /* CoreLocation.framework */; };
+		5CECDDBB1E8E443D00A5E013 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE863541E8CDA32005FAD62 /* CoreMedia.framework */; };
+		5CECDDBC1E8E443D00A5E013 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE8635B1E8CDA41005FAD62 /* CoreVideo.framework */; };
+		5CECDDBD1E8E443D00A5E013 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE8636B1E8CDB06005FAD62 /* Foundation.framework */; };
+		5CECDDBE1E8E443D00A5E013 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE863691E8CDAF8005FAD62 /* MessageUI.framework */; };
+		5CECDDBF1E8E443D00A5E013 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE863631E8CDADF005FAD62 /* OpenGLES.framework */; };
+		5CECDDC01E8E443D00A5E013 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE863641E8CDADF005FAD62 /* QuartzCore.framework */; };
+		5CECDDC11E8E443D00A5E013 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE8635F1E8CDAA4005FAD62 /* Security.framework */; };
+		5CECDDC21E8E443D00A5E013 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE863611E8CDABF005FAD62 /* SystemConfiguration.framework */; };
+		5CECDDC31E8E443D00A5E013 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE8635D1E8CDA9B005FAD62 /* UIKit.framework */; };
+		5CEE530B1E925EE4001539E8 /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE530A1E925EE4001539E8 /* 1.txt */; };
+		5F7B394885F1AC351FE55FFA /* Pods_sqlite_tut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C500A561C3002D4AD89DBE24 /* Pods_sqlite_tut.framework */; };
+		61D75FC6E0F14791CC392F45 /* Pods_sqlite_tutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9882B1B34E2782C0F24C0B3 /* Pods_sqlite_tutUITests.framework */; };
 		7B14D14B1E8106A90060BF5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D14A1E8106A90060BF5F /* AppDelegate.swift */; };
 		7B14D1501E8106A90060BF5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B14D14E1E8106A90060BF5F /* Main.storyboard */; };
 		7B14D1521E8106A90060BF5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B14D1511E8106A90060BF5F /* Assets.xcassets */; };
@@ -28,11 +51,8 @@
 		7B14D16B1E8106AA0060BF5F /* sqlite_tutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D16A1E8106AA0060BF5F /* sqlite_tutUITests.swift */; };
 		7B14D17A1E8107340060BF5F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D1781E8107340060BF5F /* HomeVC.swift */; };
 		7B14D17B1E8107340060BF5F /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B14D1791E8107340060BF5F /* HomeVC.xib */; };
-		7B14D17F1E81075D0060BF5F /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D17D1E81075D0060BF5F /* StudentCell.swift */; };
-		7B14D1801E81075D0060BF5F /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B14D17E1E81075D0060BF5F /* StudentCell.xib */; };
 		7B14D1831E8107830060BF5F /* InsertRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D1811E8107830060BF5F /* InsertRecordVC.swift */; };
 		7B14D1841E8107830060BF5F /* InsertRecordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B14D1821E8107830060BF5F /* InsertRecordVC.xib */; };
-		7B14D1871E81146B0060BF5F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B14D1861E81146B0060BF5F /* libsqlite3.0.tbd */; };
 		7B14D1951E8114A10060BF5F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D18A1E8114A10060BF5F /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7B14D1961E8114A10060BF5F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D18C1E8114A10060BF5F /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7B14D1971E8114A10060BF5F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D18E1E8114A10060BF5F /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -43,9 +63,7 @@
 		7B14D1A81E811AB20060BF5F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D1A51E811AB20060BF5F /* Photo.swift */; };
 		7B14D1A91E811AB20060BF5F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D1A61E811AB20060BF5F /* Util.swift */; };
 		7B14D1AB1E811ACF0060BF5F /* Student.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7B14D1AA1E811ACF0060BF5F /* Student.sqlite */; };
-		8B06B510C815B33D9FA62A12 /* Pods_sqlite_tutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F797FE3F2682BEDC1CAF3167 /* Pods_sqlite_tutTests.framework */; };
-		9A64B68F0DE965F68F40FC78 /* Pods_sqlite_tutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33151223944C087BF431C055 /* Pods_sqlite_tutUITests.framework */; };
-		DEE885DC396AA4B6D8E3B461 /* Pods_sqlite_tut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10D0B76C7A23F100817EA18 /* Pods_sqlite_tut.framework */; };
+		E3638DDD85AE835284B13313 /* Pods_sqlite_tutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C976A85E8ACDCE64114573D7 /* Pods_sqlite_tutTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +84,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0FE312B1D0188D38BB697FFB /* Pods-sqlite_tut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tut.release.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tut/Pods-sqlite_tut.release.xcconfig"; sourceTree = "<group>"; };
-		33151223944C087BF431C055 /* Pods_sqlite_tutUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sqlite_tutUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D83B094DB4D5504C0B8229E /* Pods-sqlite_tutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tutTests/Pods-sqlite_tutTests.release.xcconfig"; sourceTree = "<group>"; };
-		5CDA93F6247E74CB6AB590D4 /* Pods-sqlite_tutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tutTests/Pods-sqlite_tutTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0765ACBABC47074B83BD6F8F /* Pods-sqlite_tutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tutUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tutUITests/Pods-sqlite_tutUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		46294CD591E3D09C49399954 /* Pods-sqlite_tutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tutTests/Pods-sqlite_tutTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B70825CE6A32AEE897C40D7 /* Pods-sqlite_tut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tut.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tut/Pods-sqlite_tut.debug.xcconfig"; sourceTree = "<group>"; };
 		5CDCEC361E81400D0002D556 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		5CDCEC371E81400D0002D556 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		5CDCEC381E81400D0002D556 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
@@ -83,6 +100,48 @@
 		5CDCEC511E814FF40002D556 /* userPostsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userPostsCell.xib; sourceTree = "<group>"; };
 		5CDCEC581E815D2E0002D556 /* userCommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCommentsViewController.swift; sourceTree = "<group>"; };
 		5CDCEC591E815D2E0002D556 /* userCommentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = userCommentsViewController.xib; sourceTree = "<group>"; };
+		5CE8634F1E8CDA32005FAD62 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		5CE863501E8CDA32005FAD62 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5CE863511E8CDA32005FAD62 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5CE863521E8CDA32005FAD62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5CE863531E8CDA32005FAD62 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5CE863541E8CDA32005FAD62 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		5CE8635B1E8CDA41005FAD62 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		5CE8635D1E8CDA9B005FAD62 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5CE8635F1E8CDAA4005FAD62 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5CE863611E8CDABF005FAD62 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5CE863631E8CDADF005FAD62 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		5CE863641E8CDADF005FAD62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5CE863671E8CDAF2005FAD62 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5CE863691E8CDAF8005FAD62 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5CE8636B1E8CDB06005FAD62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5CE8636D1E8CDB22005FAD62 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		5CE8636F1E8CF5CA005FAD62 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPayPalMobile.a; path = "Pods/PayPal-iOS-SDK/PayPalMobile/libPayPalMobile.a"; sourceTree = "<group>"; };
+		5CE863711E8D0100005FAD62 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../Library/Developer/Xcode/DerivedData/sqlite_tut-bgkkfrsrdxzwzbcfewxjiqnbndwt/Build/Products/Debug-iphonesimulator/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
+		5CE863751E8D0119005FAD62 /* libedit.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libedit.3.tbd; path = usr/lib/libedit.3.tbd; sourceTree = SDKROOT; };
+		5CECDD651E8E389C00A5E013 /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIO.h; sourceTree = "<group>"; };
+		5CECDD661E8E389C00A5E013 /* CardIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardIO.m; sourceTree = "<group>"; };
+		5CECDD671E8E389C00A5E013 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOCreditCardInfo.h; sourceTree = "<group>"; };
+		5CECDD681E8E389C00A5E013 /* CardIODetectionMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIODetectionMode.h; sourceTree = "<group>"; };
+		5CECDD691E8E389C00A5E013 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		5CECDD6A1E8E389C00A5E013 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		5CECDD6B1E8E389C00A5E013 /* CardIOUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOUtilities.h; sourceTree = "<group>"; };
+		5CECDD6C1E8E389C00A5E013 /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOView.h; sourceTree = "<group>"; };
+		5CECDD6D1E8E389C00A5E013 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
+		5CECDD6E1E8E389C00A5E013 /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
+		5CECDD6F1E8E389C00A5E013 /* libopencv_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_core.a; sourceTree = "<group>"; };
+		5CECDD701E8E389C00A5E013 /* libopencv_imgproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_imgproc.a; sourceTree = "<group>"; };
+		5CECDD941E8E3BE200A5E013 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMobile.a; sourceTree = "<group>"; };
+		5CECDD951E8E3BE200A5E013 /* PayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalConfiguration.h; sourceTree = "<group>"; };
+		5CECDD961E8E3BE200A5E013 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
+		5CECDD971E8E3BE200A5E013 /* PayPalMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalMobile.h; sourceTree = "<group>"; };
+		5CECDD981E8E3BE200A5E013 /* PayPalOAuthScopes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalOAuthScopes.h; sourceTree = "<group>"; };
+		5CECDD991E8E3BE200A5E013 /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPayment.h; sourceTree = "<group>"; };
+		5CECDD9A1E8E3BE200A5E013 /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPaymentViewController.h; sourceTree = "<group>"; };
+		5CECDD9B1E8E3BE200A5E013 /* PayPalProfileSharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalProfileSharingViewController.h; sourceTree = "<group>"; };
+		5CECDDB31E8E412000A5E013 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5CEE530A1E925EE4001539E8 /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 1.txt; path = sqlite_tut/Model/1.txt; sourceTree = "<group>"; };
+		702E69707574B23688F01C42 /* Pods-sqlite_tut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tut.release.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tut/Pods-sqlite_tut.release.xcconfig"; sourceTree = "<group>"; };
 		7B14D1471E8106A90060BF5F /* sqlite_tut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sqlite_tut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B14D14A1E8106A90060BF5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B14D14F1E8106A90060BF5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,8 +156,6 @@
 		7B14D16C1E8106AA0060BF5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B14D1781E8107340060BF5F /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		7B14D1791E8107340060BF5F /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
-		7B14D17D1E81075D0060BF5F /* StudentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
-		7B14D17E1E81075D0060BF5F /* StudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
 		7B14D1811E8107830060BF5F /* InsertRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertRecordVC.swift; sourceTree = "<group>"; };
 		7B14D1821E8107830060BF5F /* InsertRecordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsertRecordVC.xib; sourceTree = "<group>"; };
 		7B14D1861E81146B0060BF5F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -113,17 +170,17 @@
 		7B14D1911E8114A10060BF5F /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		7B14D1921E8114A10060BF5F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		7B14D1931E8114A10060BF5F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		7B14D1941E8114A10060BF5F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B14D1941E8114A10060BF5F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../fmdb/Info.plist; sourceTree = "<group>"; };
 		7B14D1A21E8116B30060BF5F /* sqlite_tut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sqlite_tut-Bridging-Header.h"; sourceTree = "<group>"; };
 		7B14D1A41E811AB20060BF5F /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		7B14D1A51E811AB20060BF5F /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7B14D1A61E811AB20060BF5F /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		7B14D1AA1E811ACF0060BF5F /* Student.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Student.sqlite; sourceTree = "<group>"; };
-		845BBF12ECF7C55C7D43413A /* Pods-sqlite_tutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tutUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tutUITests/Pods-sqlite_tutUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A10D0B76C7A23F100817EA18 /* Pods_sqlite_tut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sqlite_tut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AABB5ABFCC2DF37738690CEA /* Pods-sqlite_tut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tut.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tut/Pods-sqlite_tut.debug.xcconfig"; sourceTree = "<group>"; };
-		D6FB513A5B14FAF80FD07462 /* Pods-sqlite_tutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tutUITests/Pods-sqlite_tutUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F797FE3F2682BEDC1CAF3167 /* Pods_sqlite_tutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sqlite_tutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C26A74DF4FECB402982AA84D /* Pods-sqlite_tutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tutTests/Pods-sqlite_tutTests.release.xcconfig"; sourceTree = "<group>"; };
+		C500A561C3002D4AD89DBE24 /* Pods_sqlite_tut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sqlite_tut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C976A85E8ACDCE64114573D7 /* Pods_sqlite_tutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sqlite_tutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9882B1B34E2782C0F24C0B3 /* Pods_sqlite_tutUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sqlite_tutUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE187169E54CF7F4E2DEF3FC /* Pods-sqlite_tutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tutUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tutUITests/Pods-sqlite_tutUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +188,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B14D1871E81146B0060BF5F /* libsqlite3.0.tbd in Frameworks */,
-				DEE885DC396AA4B6D8E3B461 /* Pods_sqlite_tut.framework in Frameworks */,
+				5CECDDB61E8E443D00A5E013 /* Accelerate.framework in Frameworks */,
+				5CECDDB71E8E443D00A5E013 /* AudioToolbox.framework in Frameworks */,
+				5CECDDB81E8E443D00A5E013 /* AVFoundation.framework in Frameworks */,
+				5CECDDB91E8E443D00A5E013 /* CoreGraphics.framework in Frameworks */,
+				5CECDDBA1E8E443D00A5E013 /* CoreLocation.framework in Frameworks */,
+				5CECDDBB1E8E443D00A5E013 /* CoreMedia.framework in Frameworks */,
+				5CECDDBC1E8E443D00A5E013 /* CoreVideo.framework in Frameworks */,
+				5CECDDBD1E8E443D00A5E013 /* Foundation.framework in Frameworks */,
+				5CECDDBE1E8E443D00A5E013 /* MessageUI.framework in Frameworks */,
+				5CECDDBF1E8E443D00A5E013 /* OpenGLES.framework in Frameworks */,
+				5CECDDC01E8E443D00A5E013 /* QuartzCore.framework in Frameworks */,
+				5CECDDC11E8E443D00A5E013 /* Security.framework in Frameworks */,
+				5CECDDC21E8E443D00A5E013 /* SystemConfiguration.framework in Frameworks */,
+				5CECDDC31E8E443D00A5E013 /* UIKit.framework in Frameworks */,
+				5CECDDB51E8E412600A5E013 /* MobileCoreServices.framework in Frameworks */,
+				5CECDDB41E8E412000A5E013 /* WebKit.framework in Frameworks */,
+				5CECDDB21E8E3DDB00A5E013 /* libPayPalMobile.a in Frameworks */,
+				5CECDD8F1E8E394E00A5E013 /* libxml2.tbd in Frameworks */,
+				5CE863771E8D0158005FAD62 /* libsqlite3.0.tbd in Frameworks */,
+				5F7B394885F1AC351FE55FFA /* Pods_sqlite_tut.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B06B510C815B33D9FA62A12 /* Pods_sqlite_tutTests.framework in Frameworks */,
+				E3638DDD85AE835284B13313 /* Pods_sqlite_tutTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,24 +223,62 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A64B68F0DE965F68F40FC78 /* Pods_sqlite_tutUITests.framework in Frameworks */,
+				61D75FC6E0F14791CC392F45 /* Pods_sqlite_tutUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CECDD641E8E389C00A5E013 /* CardIO */ = {
+			isa = PBXGroup;
+			children = (
+				5CECDD651E8E389C00A5E013 /* CardIO.h */,
+				5CECDD661E8E389C00A5E013 /* CardIO.m */,
+				5CECDD671E8E389C00A5E013 /* CardIOCreditCardInfo.h */,
+				5CECDD681E8E389C00A5E013 /* CardIODetectionMode.h */,
+				5CECDD691E8E389C00A5E013 /* CardIOPaymentViewController.h */,
+				5CECDD6A1E8E389C00A5E013 /* CardIOPaymentViewControllerDelegate.h */,
+				5CECDD6B1E8E389C00A5E013 /* CardIOUtilities.h */,
+				5CECDD6C1E8E389C00A5E013 /* CardIOView.h */,
+				5CECDD6D1E8E389C00A5E013 /* CardIOViewDelegate.h */,
+				5CECDD6E1E8E389C00A5E013 /* libCardIO.a */,
+				5CECDD6F1E8E389C00A5E013 /* libopencv_core.a */,
+				5CECDD701E8E389C00A5E013 /* libopencv_imgproc.a */,
+			);
+			name = CardIO;
+			path = "../../Downloads/PayPal-iOS-SDK-master/CardIO";
+			sourceTree = "<group>";
+		};
+		5CECDD931E8E3BE200A5E013 /* PayPalMobile */ = {
+			isa = PBXGroup;
+			children = (
+				5CECDD941E8E3BE200A5E013 /* libPayPalMobile.a */,
+				5CECDD951E8E3BE200A5E013 /* PayPalConfiguration.h */,
+				5CECDD961E8E3BE200A5E013 /* PayPalFuturePaymentViewController.h */,
+				5CECDD971E8E3BE200A5E013 /* PayPalMobile.h */,
+				5CECDD981E8E3BE200A5E013 /* PayPalOAuthScopes.h */,
+				5CECDD991E8E3BE200A5E013 /* PayPalPayment.h */,
+				5CECDD9A1E8E3BE200A5E013 /* PayPalPaymentViewController.h */,
+				5CECDD9B1E8E3BE200A5E013 /* PayPalProfileSharingViewController.h */,
+			);
+			path = PayPalMobile;
+			sourceTree = "<group>";
+		};
 		7B14D13E1E8106A90060BF5F = {
 			isa = PBXGroup;
 			children = (
+				5CECDD931E8E3BE200A5E013 /* PayPalMobile */,
+				5CECDD641E8E389C00A5E013 /* CardIO */,
 				7B14D1AA1E811ACF0060BF5F /* Student.sqlite */,
-				7B14D1881E8114A10060BF5F /* fmdb */,
+				5CEE530A1E925EE4001539E8 /* 1.txt */,
 				7B14D1491E8106A90060BF5F /* sqlite_tut */,
+				7B14D1881E8114A10060BF5F /* fmdb */,
 				7B14D15E1E8106AA0060BF5F /* sqlite_tutTests */,
 				7B14D1691E8106AA0060BF5F /* sqlite_tutUITests */,
 				7B14D1481E8106A90060BF5F /* Products */,
 				7B14D1851E81146B0060BF5F /* Frameworks */,
-				E0FB91A223625711A9B0DAFC /* Pods */,
+				EA7CBA919D43387F54F9D214 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +295,7 @@
 		7B14D1491E8106A90060BF5F /* sqlite_tut */ = {
 			isa = PBXGroup;
 			children = (
+				7B14D1941E8114A10060BF5F /* Info.plist */,
 				5CDCEC461E8144220002D556 /* REST-Api.swift */,
 				7B14D1A31E811AB20060BF5F /* Model */,
 				7B14D17C1E81073A0060BF5F /* cell */,
@@ -224,8 +338,6 @@
 		7B14D17C1E81073A0060BF5F /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				7B14D17D1E81075D0060BF5F /* StudentCell.swift */,
-				7B14D17E1E81075D0060BF5F /* StudentCell.xib */,
 				5CDCEC501E814FF40002D556 /* userPostsCell.swift */,
 				5CDCEC511E814FF40002D556 /* userPostsCell.xib */,
 			);
@@ -235,10 +347,30 @@
 		7B14D1851E81146B0060BF5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5CECDDB31E8E412000A5E013 /* WebKit.framework */,
+				5CE863751E8D0119005FAD62 /* libedit.3.tbd */,
+				5CE863711E8D0100005FAD62 /* ObjectMapper.framework */,
+				5CE8636F1E8CF5CA005FAD62 /* libPayPalMobile.a */,
+				5CE8636D1E8CDB22005FAD62 /* libxml2.tbd */,
+				5CE8636B1E8CDB06005FAD62 /* Foundation.framework */,
+				5CE863691E8CDAF8005FAD62 /* MessageUI.framework */,
+				5CE863671E8CDAF2005FAD62 /* MobileCoreServices.framework */,
+				5CE863631E8CDADF005FAD62 /* OpenGLES.framework */,
+				5CE863641E8CDADF005FAD62 /* QuartzCore.framework */,
+				5CE863611E8CDABF005FAD62 /* SystemConfiguration.framework */,
+				5CE8635F1E8CDAA4005FAD62 /* Security.framework */,
+				5CE8635D1E8CDA9B005FAD62 /* UIKit.framework */,
+				5CE8635B1E8CDA41005FAD62 /* CoreVideo.framework */,
+				5CE8634F1E8CDA32005FAD62 /* Accelerate.framework */,
+				5CE863501E8CDA32005FAD62 /* AudioToolbox.framework */,
+				5CE863511E8CDA32005FAD62 /* AVFoundation.framework */,
+				5CE863521E8CDA32005FAD62 /* CoreGraphics.framework */,
+				5CE863531E8CDA32005FAD62 /* CoreLocation.framework */,
+				5CE863541E8CDA32005FAD62 /* CoreMedia.framework */,
 				7B14D1861E81146B0060BF5F /* libsqlite3.0.tbd */,
-				A10D0B76C7A23F100817EA18 /* Pods_sqlite_tut.framework */,
-				F797FE3F2682BEDC1CAF3167 /* Pods_sqlite_tutTests.framework */,
-				33151223944C087BF431C055 /* Pods_sqlite_tutUITests.framework */,
+				C500A561C3002D4AD89DBE24 /* Pods_sqlite_tut.framework */,
+				C976A85E8ACDCE64114573D7 /* Pods_sqlite_tutTests.framework */,
+				F9882B1B34E2782C0F24C0B3 /* Pods_sqlite_tutUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -257,7 +389,6 @@
 				7B14D1911E8114A10060BF5F /* FMDB.h */,
 				7B14D1921E8114A10060BF5F /* FMResultSet.h */,
 				7B14D1931E8114A10060BF5F /* FMResultSet.m */,
-				7B14D1941E8114A10060BF5F /* Info.plist */,
 			);
 			path = fmdb;
 			sourceTree = "<group>";
@@ -278,15 +409,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E0FB91A223625711A9B0DAFC /* Pods */ = {
+		EA7CBA919D43387F54F9D214 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AABB5ABFCC2DF37738690CEA /* Pods-sqlite_tut.debug.xcconfig */,
-				0FE312B1D0188D38BB697FFB /* Pods-sqlite_tut.release.xcconfig */,
-				5CDA93F6247E74CB6AB590D4 /* Pods-sqlite_tutTests.debug.xcconfig */,
-				4D83B094DB4D5504C0B8229E /* Pods-sqlite_tutTests.release.xcconfig */,
-				845BBF12ECF7C55C7D43413A /* Pods-sqlite_tutUITests.debug.xcconfig */,
-				D6FB513A5B14FAF80FD07462 /* Pods-sqlite_tutUITests.release.xcconfig */,
+				5B70825CE6A32AEE897C40D7 /* Pods-sqlite_tut.debug.xcconfig */,
+				702E69707574B23688F01C42 /* Pods-sqlite_tut.release.xcconfig */,
+				46294CD591E3D09C49399954 /* Pods-sqlite_tutTests.debug.xcconfig */,
+				C26A74DF4FECB402982AA84D /* Pods-sqlite_tutTests.release.xcconfig */,
+				0765ACBABC47074B83BD6F8F /* Pods-sqlite_tutUITests.debug.xcconfig */,
+				FE187169E54CF7F4E2DEF3FC /* Pods-sqlite_tutUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -298,12 +429,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B14D16F1E8106AA0060BF5F /* Build configuration list for PBXNativeTarget "sqlite_tut" */;
 			buildPhases = (
-				0AC803169972FCBDF370BB39 /* [CP] Check Pods Manifest.lock */,
+				EF385124ED1FC4A86905C8AB /* [CP] Check Pods Manifest.lock */,
 				7B14D1431E8106A90060BF5F /* Sources */,
 				7B14D1441E8106A90060BF5F /* Frameworks */,
 				7B14D1451E8106A90060BF5F /* Resources */,
-				C2CC12624304D442BEB1F19B /* [CP] Embed Pods Frameworks */,
-				5853D89E321BA5779074F8A6 /* [CP] Copy Pods Resources */,
+				F92543D0C11503F6EE5A3277 /* [CP] Embed Pods Frameworks */,
+				1AC465E02138EF78740956C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,12 +449,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B14D1721E8106AA0060BF5F /* Build configuration list for PBXNativeTarget "sqlite_tutTests" */;
 			buildPhases = (
-				8A559F489FE01E997B20CBE4 /* [CP] Check Pods Manifest.lock */,
+				823563C12A1835B0E46DA9B0 /* [CP] Check Pods Manifest.lock */,
 				7B14D1571E8106AA0060BF5F /* Sources */,
 				7B14D1581E8106AA0060BF5F /* Frameworks */,
 				7B14D1591E8106AA0060BF5F /* Resources */,
-				7901C815B249B75F98C66B3B /* [CP] Embed Pods Frameworks */,
-				B15D9341D4898A98BD646BCB /* [CP] Copy Pods Resources */,
+				FCC86F8883C30461C353D1B8 /* [CP] Embed Pods Frameworks */,
+				9662BD5EEA577FC97F79DA51 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,12 +470,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B14D1751E8106AA0060BF5F /* Build configuration list for PBXNativeTarget "sqlite_tutUITests" */;
 			buildPhases = (
-				5B9880566699191D74315594 /* [CP] Check Pods Manifest.lock */,
+				854D032B6CB749CB8824D5DC /* [CP] Check Pods Manifest.lock */,
 				7B14D1621E8106AA0060BF5F /* Sources */,
 				7B14D1631E8106AA0060BF5F /* Frameworks */,
 				7B14D1641E8106AA0060BF5F /* Resources */,
-				05571FA8C2C93CCD01A5D6C8 /* [CP] Embed Pods Frameworks */,
-				700E215536A73611C4978494 /* [CP] Copy Pods Resources */,
+				9F6E1A0324C0093778736ADC /* [CP] Embed Pods Frameworks */,
+				86753033B865C46A111814F9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -407,6 +538,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CEE530B1E925EE4001539E8 /* 1.txt in Resources */,
 				5CDCEC531E814FF40002D556 /* userPostsCell.xib in Resources */,
 				7B14D1551E8106A90060BF5F /* LaunchScreen.storyboard in Resources */,
 				7B14D17B1E8107340060BF5F /* HomeVC.xib in Resources */,
@@ -416,7 +548,6 @@
 				7B14D1521E8106A90060BF5F /* Assets.xcassets in Resources */,
 				7B14D1501E8106A90060BF5F /* Main.storyboard in Resources */,
 				7B14D1AB1E811ACF0060BF5F /* Student.sqlite in Resources */,
-				7B14D1801E81075D0060BF5F /* StudentCell.xib in Resources */,
 				7B14D19A1E8114A10060BF5F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,37 +569,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05571FA8C2C93CCD01A5D6C8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sqlite_tutUITests/Pods-sqlite_tutUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0AC803169972FCBDF370BB39 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5853D89E321BA5779074F8A6 /* [CP] Copy Pods Resources */ = {
+		1AC465E02138EF78740956C5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,7 +584,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sqlite_tut/Pods-sqlite_tut-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B9880566699191D74315594 /* [CP] Check Pods Manifest.lock */ = {
+		823563C12A1835B0E46DA9B0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -498,7 +599,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		700E215536A73611C4978494 /* [CP] Copy Pods Resources */ = {
+		854D032B6CB749CB8824D5DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		86753033B865C46A111814F9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -513,37 +629,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sqlite_tutUITests/Pods-sqlite_tutUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7901C815B249B75F98C66B3B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sqlite_tutTests/Pods-sqlite_tutTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8A559F489FE01E997B20CBE4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B15D9341D4898A98BD646BCB /* [CP] Copy Pods Resources */ = {
+		9662BD5EEA577FC97F79DA51 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -558,7 +644,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sqlite_tutTests/Pods-sqlite_tutTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C2CC12624304D442BEB1F19B /* [CP] Embed Pods Frameworks */ = {
+		9F6E1A0324C0093778736ADC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sqlite_tutUITests/Pods-sqlite_tutUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF385124ED1FC4A86905C8AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F92543D0C11503F6EE5A3277 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -571,6 +687,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sqlite_tut/Pods-sqlite_tut-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCC86F8883C30461C353D1B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sqlite_tutTests/Pods-sqlite_tutTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -586,7 +717,6 @@
 				5CDCEC3C1E81400D0002D556 /* Address.swift in Sources */,
 				5CDCEC3D1E81400D0002D556 /* Comment.swift in Sources */,
 				5CDCEC401E81400D0002D556 /* Post.swift in Sources */,
-				7B14D17F1E81075D0060BF5F /* StudentCell.swift in Sources */,
 				7B14D14B1E8106A90060BF5F /* AppDelegate.swift in Sources */,
 				7B14D1A81E811AB20060BF5F /* Photo.swift in Sources */,
 				7B14D1951E8114A10060BF5F /* FMDatabase.m in Sources */,
@@ -600,6 +730,7 @@
 				5CDCEC471E8144220002D556 /* REST-Api.swift in Sources */,
 				5CDCEC5A1E815D2E0002D556 /* userCommentsViewController.swift in Sources */,
 				7B14D17A1E8107340060BF5F /* HomeVC.swift in Sources */,
+				5CECDD711E8E389C00A5E013 /* CardIO.m in Sources */,
 				7B14D1961E8114A10060BF5F /* FMDatabaseAdditions.m in Sources */,
 				5CDCEC3F1E81400D0002D556 /* Geo.swift in Sources */,
 			);
@@ -751,12 +882,22 @@
 		};
 		7B14D1701E8106AA0060BF5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AABB5ABFCC2DF37738690CEA /* Pods-sqlite_tut.debug.xcconfig */;
+			baseConfigurationReference = 5B70825CE6A32AEE897C40D7 /* Pods-sqlite_tut.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = sqlite_tut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PayPalMobile",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sqlite.sqlite-tut";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/itilak/Desktop/sqlite_tut/sqlite_tut/sqlite_tut-Bridging-Header.h";
@@ -766,12 +907,22 @@
 		};
 		7B14D1711E8106AA0060BF5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FE312B1D0188D38BB697FFB /* Pods-sqlite_tut.release.xcconfig */;
+			baseConfigurationReference = 702E69707574B23688F01C42 /* Pods-sqlite_tut.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = sqlite_tut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PayPalMobile",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sqlite.sqlite-tut";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/itilak/Desktop/sqlite_tut/sqlite_tut/sqlite_tut-Bridging-Header.h";
@@ -781,7 +932,7 @@
 		};
 		7B14D1731E8106AA0060BF5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5CDA93F6247E74CB6AB590D4 /* Pods-sqlite_tutTests.debug.xcconfig */;
+			baseConfigurationReference = 46294CD591E3D09C49399954 /* Pods-sqlite_tutTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -796,7 +947,7 @@
 		};
 		7B14D1741E8106AA0060BF5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D83B094DB4D5504C0B8229E /* Pods-sqlite_tutTests.release.xcconfig */;
+			baseConfigurationReference = C26A74DF4FECB402982AA84D /* Pods-sqlite_tutTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -811,7 +962,7 @@
 		};
 		7B14D1761E8106AA0060BF5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 845BBF12ECF7C55C7D43413A /* Pods-sqlite_tutUITests.debug.xcconfig */;
+			baseConfigurationReference = 0765ACBABC47074B83BD6F8F /* Pods-sqlite_tutUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = sqlite_tutUITests/Info.plist;
@@ -825,7 +976,7 @@
 		};
 		7B14D1771E8106AA0060BF5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6FB513A5B14FAF80FD07462 /* Pods-sqlite_tutUITests.release.xcconfig */;
+			baseConfigurationReference = FE187169E54CF7F4E2DEF3FC /* Pods-sqlite_tutUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = sqlite_tutUITests/Info.plist;

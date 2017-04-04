@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PayPalMobileSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,15 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Util.copyFile("Student.sqlite")
-        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let navController = UINavigationController()
-        
         navController.pushViewController(userPosts(), animated: true)
-        
         self.window!.rootViewController = navController
         self.window!.makeKeyAndVisible()
-        
+        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "production_client_id", PayPalEnvironmentSandbox: "AXm-IcaAfcByXiY2mBwi2OxmxEt6qm6TUrm3GV4Pb1s7Wp1U_6kzTNZw9FyxDQ4tT1tX5lCHSmXRxdvg"])
+
         return true
     }
 

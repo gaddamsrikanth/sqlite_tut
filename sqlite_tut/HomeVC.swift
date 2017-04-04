@@ -19,7 +19,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         self.navigationController?.isNavigationBarHidden = true
         tblStudentData.delegate = self
         tblStudentData.dataSource = self
-        tblStudentData.register(UINib(nibName: "StudentCell", bundle: nil), forCellReuseIdentifier: "StudentCell")
+//        tblStudentData.register(UINib(nibName: "StudentCell", bundle: nil), forCellReuseIdentifier: "StudentCell")
         tblStudentData.allowsSelection = false
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -35,18 +35,19 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentCell", for: indexPath) as! StudentCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentCell", for: indexPath) as! StudentCell
 //        let student:AnyObject = marrStudentData.object(at: indexPath.row) as! AnyObject
 //        cell.lblName.text = "Name : \(student.Name)"
 //        cell.lblId.text = "Marks : \(student.Marks)"
 //        cell.student = student
 //        cell.main = self
-        let user: User = mUserData.object(at: indexPath.row) as! User
-        cell.lblName.text = "Name : \(user.name!)"
-        cell.lblId.text = "id : \(user.id!)"
-        cell.student = user
-        cell.main = self
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "")
+//        let user: User = mUserData.object(at: indexPath.row) as! User
+//        cell.lblName.text = "Name : \(user.name!)"
+//        cell.lblId.text = "id : \(user.id!)"
+//        cell.student = user
+//        cell.main = self
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -56,7 +57,7 @@ class HomeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func getStudentData()
     {
         mUserData = NSMutableArray()
-        mUserData = ModelManager.getInstance().getAllData()
+        //mUserData = ModelManager.getInstance().getAllData()
         tblStudentData.reloadData()
     }
     
