@@ -99,6 +99,30 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
         } else {
             switch type {
             case 1:
+                let vc = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 2] as! ChatVC
+                DispatchQueue.main.async {
+                    if let key = vc.sendVideoMessage() {
+                        // 4
+                        self.result.object(at: indexPath.item).requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
+                            let videoFileUrl = (contentEditingInput?.audiovisualAsset as! AVURLAsset).url.absoluteString
+                            // 5
+                            let path = "\((FIRAuth.auth()?.currentUser?.uid)!)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(self.result.object(at: indexPath.item).value(forKey: "filename")!)"
+                            
+                            // 6
+                            vc.storageRef.child(path).putFile(URL(string: videoFileUrl)!, metadata: nil) { (metadata, error) in
+                                if let error = error {
+                                    print("Error uploading photo: \(error.localizedDescription)")
+                                    return
+                                }
+                                // 7
+                                vc.setVideoURL(vc.storageRef.child((metadata?.path)!).description, forVideoMessageWithKey: key)
+                            }
+                        })
+                    }
+                }
+                if let nav = self.navigationController {
+                    nav.popViewController(animated: true)
+                }
                 break
             default:
                 let vc = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 2] as! ChatVC
@@ -109,7 +133,7 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
                             let imageFileURL = contentEditingInput?.fullSizeImageURL
                             
                             // 5
-                            let path = "\(FIRAuth.auth()?.currentUser?.uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(self.result.object(at: indexPath.item).value(forKey: "filename"))"
+                            let path = "\((FIRAuth.auth()?.currentUser?.uid)!)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(self.result.object(at: indexPath.item).value(forKey: "filename")!)"
                             
                             // 6
                             vc.storageRef.child(path).putFile(imageFileURL!, metadata: nil) { (metadata, error) in

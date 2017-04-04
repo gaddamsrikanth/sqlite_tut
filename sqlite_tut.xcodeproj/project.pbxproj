@@ -15,6 +15,8 @@
 		5CDCEC411E81400D0002D556 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCEC3B1E81400D0002D556 /* User.swift */; };
 		5CDCEC471E8144220002D556 /* REST-Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCEC461E8144220002D556 /* REST-Api.swift */; };
 		7B0174C61E936130003E5CBF /* camIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B0174C51E936130003E5CBF /* camIcon.png */; };
+		7B0174C91E93C3EF003E5CBF /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0174C71E93C3EF003E5CBF /* VideoPlayerVC.swift */; };
+		7B0174CA1E93C3EF003E5CBF /* VideoPlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0174C81E93C3EF003E5CBF /* VideoPlayerVC.xib */; };
 		7B130D151E8CF0EE00C14908 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B130D131E8CF0EE00C14908 /* LoginVC.swift */; };
 		7B130D161E8CF0EE00C14908 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B130D141E8CF0EE00C14908 /* LoginVC.xib */; };
 		7B130D181E8CF26700C14908 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B130D171E8CF26700C14908 /* GoogleService-Info.plist */; };
@@ -97,6 +99,8 @@
 		5CDCEC3B1E81400D0002D556 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5CDCEC461E8144220002D556 /* REST-Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "REST-Api.swift"; sourceTree = "<group>"; };
 		7B0174C51E936130003E5CBF /* camIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camIcon.png; sourceTree = "<group>"; };
+		7B0174C71E93C3EF003E5CBF /* VideoPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
+		7B0174C81E93C3EF003E5CBF /* VideoPlayerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPlayerVC.xib; sourceTree = "<group>"; };
 		7B130D131E8CF0EE00C14908 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7B130D141E8CF0EE00C14908 /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		7B130D171E8CF26700C14908 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -336,6 +340,8 @@
 				7B420B611E920F6700ED7C4E /* MediaSelectorVC.xib */,
 				7B420B6C1E92179500ED7C4E /* AssestCell.swift */,
 				7B420B6D1E92179500ED7C4E /* AssestCell.xib */,
+				7B0174C71E93C3EF003E5CBF /* VideoPlayerVC.swift */,
+				7B0174C81E93C3EF003E5CBF /* VideoPlayerVC.xib */,
 			);
 			name = MediaSelector;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				7B420B7C1E9251DD00ED7C4E /* checked.png in Resources */,
 				7B14D1801E81075D0060BF5F /* StudentCell.xib in Resources */,
 				7B14D19A1E8114A10060BF5F /* Info.plist in Resources */,
+				7B0174CA1E93C3EF003E5CBF /* VideoPlayerVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +685,7 @@
 				5CDCEC3C1E81400D0002D556 /* Address.swift in Sources */,
 				5CDCEC3D1E81400D0002D556 /* Comment.swift in Sources */,
 				5CDCEC401E81400D0002D556 /* Post.swift in Sources */,
+				7B0174C91E93C3EF003E5CBF /* VideoPlayerVC.swift in Sources */,
 				7B14D17F1E81075D0060BF5F /* StudentCell.swift in Sources */,
 				7B14D14B1E8106A90060BF5F /* AppDelegate.swift in Sources */,
 				7B14D1A81E811AB20060BF5F /* Photo.swift in Sources */,

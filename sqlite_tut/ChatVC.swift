@@ -34,6 +34,8 @@ class ChatVC: JSQMessagesViewController {
     private var photoMessageMap = [String: JSQPhotoMediaItem]()
     private var videoMessageMap = [String: JSQVideoMediaItem]()
     private var updatedMessageRefHandle: FIRDatabaseHandle?
+    @IBOutlet var messageImageVW: UIImageView!
+    @IBOutlet var vwImageViewer: UIView!
     
     deinit {
         if let refHandle = newMessageRefHandle {
@@ -84,18 +86,40 @@ class ChatVC: JSQMessagesViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         let message = messages[indexPath.item]
-        let view = UIView(frame: CGRect(x: cell.contentView.frame.origin.x, y: cell.contentView.frame.height, width: cell.contentView.frame.width, height: 20))
         if message.senderId == senderId {
             cell.textView?.textColor = UIColor.white
         } else {
             cell.textView?.textColor = UIColor.black
-            let lbl = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-            lbl.text = message.senderDisplayName
-            view.addSubview(lbl)
-            cell.frame = CGRect(x: cell.contentView.frame.origin.x, y: cell.contentView.frame.origin.y, width: cell.contentView.frame.width, height: cell.contentView.frame.height + view.frame.height)
-            cell.contentView.addSubview(view)
         }
+        
         return cell
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAt indexPath: IndexPath!) {
+        let message = messages[indexPath.item]
+        if message.isMediaMessage {
+            if message.media is JSQPhotoMediaItem {
+                let image = (message.media as! JSQPhotoMediaItem).image!
+                messageImageVW.image = image
+                vwImageViewer.frame = CGRect(x: (UIScreen.main.bounds.size.width/2) - (image.size.width/10)/2, y: (UIScreen.main.bounds.size.height/2) - (image.size.height/10)/2, width: image.size.width/10, height: image.size.height/10)
+                self.transperentView = UIView(frame: UIScreen.main.bounds)
+                self.transperentView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+                if !self.view.subviews.contains(self.transperentView) {
+                    self.view.addSubview(self.transperentView)
+                }
+                self.view.addSubview(vwImageViewer)
+                self.cView = vwImageViewer
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapHandler))
+                tap.cancelsTouchesInView = false
+                self.transperentView.addGestureRecognizer(tap)
+            } else {
+                let vc = VideoPlayerVC()
+                vc.url = (message.media as! JSQVideoMediaItem).fileURL
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            Util.invokeAlertMethod("Message Details", strBody: "Sender: \(message.senderDisplayName!)\nMessage: \(message.text)" as NSString, delegate: self)
+        }
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
@@ -151,7 +175,7 @@ class ChatVC: JSQMessagesViewController {
         return itemRef.key
     }
     
-    func setVideoURL(_ url: String, forPhotoMessageWithKey key: String) {
+    func setVideoURL(_ url: String, forVideoMessageWithKey key: String) {
         let itemRef = messageRef.child(key)
         itemRef.updateChildValues(["videoURL": url])
     }
@@ -196,7 +220,7 @@ class ChatVC: JSQMessagesViewController {
     }
     
     //MARK: message observer
-    
+        //MARK: Image Observer
     private func addPhotoMessage(withId id: String, key: String, mediaItem: JSQPhotoMediaItem) {
         if let message = JSQMessage(senderId: id, displayName: "", media: mediaItem) {
             messages.append(message)
@@ -212,7 +236,6 @@ class ChatVC: JSQMessagesViewController {
     private func fetchImageDataAtURL(_ photoURL: String, forMediaItem mediaItem: JSQPhotoMediaItem, clearsPhotoMessageMapOnSuccessForKey key: String?) {
         // 1
         let storageRef = FIRStorage.storage().reference(forURL: photoURL)
-        
         // 2
         storageRef.data(withMaxSize: INT64_MAX){ (data, error) in
             if let error = error {
@@ -236,6 +259,45 @@ class ChatVC: JSQMessagesViewController {
                 self.collectionView.reloadData()
                 
                 // 5
+                guard key != nil else {
+                    return
+                }
+                self.photoMessageMap.removeValue(forKey: key!)
+            })
+        }
+    }
+        //MARK: Video observer
+    private func addVideoMessage(withId id: String, key: String, mediaItem: JSQVideoMediaItem) {
+        if let message = JSQMessage(senderId: id, displayName: "", media: mediaItem) {
+            messages.append(message)
+            
+            if mediaItem.fileURL == nil {
+                videoMessageMap[key] = mediaItem
+            }
+            collectionView.reloadData()
+        }
+    }
+    
+    private func fetchVideoDataAtURL(_ videoURL: String, forMediaItem mediaItem: JSQVideoMediaItem, clearsPhotoMessageMapOnSuccessForKey key: String?) {
+        // 1
+        let storageRef = FIRStorage.storage().reference(forURL: videoURL)
+        // 2
+        storageRef.data(withMaxSize: INT64_MAX){ (data, error) in
+            if let error = error {
+                print("Error downloading image data: \(error)")
+                return
+            }
+            
+            // 3
+            storageRef.metadata(completion: { (metadata, metadataErr) in
+                if let error = metadataErr {
+                    print("Error downloading metadata: \(error)")
+                    return
+                }
+//                FileManager.default.createFile(atPath: "", contents: <#T##Data?#>, attributes: <#T##[String : Any]?#>)
+                mediaItem.fileURL = URL(string: videoURL)
+                mediaItem.isReadyToPlay = true
+                self.collectionView.reloadData()
                 guard key != nil else {
                     return
                 }
@@ -272,7 +334,7 @@ class ChatVC: JSQMessagesViewController {
             let messageData = snapshot.value as! Dictionary<String, String>
             
             if let id = messageData["senderId"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String!, text.characters.count > 0 {  // 4
-                self.addMessage(withId: id, name: name, text: text)                // 5
+                self.addMessage(withId: id, name: name, text: text+"\n\(name)")                // 5
                 self.finishReceivingMessage()
             } else if let id = messageData["senderId"] as String!,
                 let photoURL = messageData["photoURL"] as String! { // 1
@@ -285,17 +347,17 @@ class ChatVC: JSQMessagesViewController {
                         self.fetchImageDataAtURL(photoURL, forMediaItem: mediaItem, clearsPhotoMessageMapOnSuccessForKey: nil)
                     }
                 }
-            } /*else if let id = messageData["senderId"] as String!,
+            } else if let id = messageData["senderId"] as String!,
                 let videoURL = messageData["videoURL"] as String! {
-                if let mediaItem = JSQPhotoMediaItem(maskAsOutgoing: id == self.senderId) {
+                if let mediaItem = JSQVideoMediaItem(maskAsOutgoing: id == self.senderId) {
                     // 3
-                    self.addPhotoMessage(withId: id, key: snapshot.key, mediaItem: mediaItem)
+                    self.addVideoMessage(withId: id, key: snapshot.key, mediaItem: mediaItem)
                     // 4
                     if videoURL.hasPrefix("gs://") {
-                        self.fetchImageDataAtURL(videoURL, forMediaItem: mediaItem, clearsPhotoMessageMapOnSuccessForKey: nil)
+                        self.fetchVideoDataAtURL(videoURL, forMediaItem: mediaItem, clearsPhotoMessageMapOnSuccessForKey: nil)
                     }
                 }
-            } */else {
+            } else {
                 print("Error! Could not decode message data")
             }
         })
@@ -308,6 +370,10 @@ class ChatVC: JSQMessagesViewController {
                 // The photo has been updated.
                 if let mediaItem = self.photoMessageMap[key] { // 3
                     self.fetchImageDataAtURL(photoURL, forMediaItem: mediaItem, clearsPhotoMessageMapOnSuccessForKey: key) // 4
+                }
+            } else if let videoURL = messageData["videoURL"] as String! {
+                if let mediaItem = self.videoMessageMap[key] {
+                    self.fetchVideoDataAtURL(videoURL, forMediaItem: mediaItem, clearsPhotoMessageMapOnSuccessForKey: key)
                 }
             }
         })
@@ -342,7 +408,7 @@ class ChatVC: JSQMessagesViewController {
             picker.sourceType = UIImagePickerControllerSourceType.camera
             present(picker, animated: true, completion:nil)
         } else {
-                Util.invokeAlertMethod("Camera", strBody: "Camera is not available right now", delegate: self)
+            Util.invokeAlertMethod("Camera", strBody: "Camera is not available right now", delegate: self)
         }
     }
 }

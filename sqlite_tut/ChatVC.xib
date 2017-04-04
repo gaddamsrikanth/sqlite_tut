@@ -11,8 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatVC" customModule="sqlite_tut" customModuleProvider="target">
             <connections>
+                <outlet property="messageImageVW" destination="aWO-Ul-W5s" id="052-re-eNi"/>
                 <outlet property="selectorVW" destination="k9p-3P-Kxc" id="4b9-24-DU6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwImageViewer" destination="E8y-QX-oxk" id="qyK-w0-158"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -62,6 +64,24 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-175" y="-447"/>
+        </view>
+        <view contentMode="scaleToFill" id="E8y-QX-oxk">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aWO-Ul-W5s">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aWO-Ul-W5s" secondAttribute="trailing" id="2dh-Hq-ynM"/>
+                <constraint firstAttribute="bottom" secondItem="aWO-Ul-W5s" secondAttribute="bottom" id="Cff-h5-LKY"/>
+                <constraint firstItem="aWO-Ul-W5s" firstAttribute="top" secondItem="E8y-QX-oxk" secondAttribute="top" id="LFH-hb-Yjz"/>
+                <constraint firstItem="aWO-Ul-W5s" firstAttribute="leading" secondItem="E8y-QX-oxk" secondAttribute="leading" id="XOC-eq-xhb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-387" y="-246"/>
         </view>
     </objects>
     <resources>
