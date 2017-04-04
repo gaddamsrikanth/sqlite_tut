@@ -84,7 +84,7 @@ class ChatVC: JSQMessagesViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         let message = messages[indexPath.item]
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 20))
+        let view = UIView(frame: CGRect(x: cell.contentView.frame.origin.x, y: cell.contentView.frame.height, width: cell.contentView.frame.width, height: 20))
         if message.senderId == senderId {
             cell.textView?.textColor = UIColor.white
         } else {
@@ -92,8 +92,9 @@ class ChatVC: JSQMessagesViewController {
             let lbl = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
             lbl.text = message.senderDisplayName
             view.addSubview(lbl)
+            cell.frame = CGRect(x: cell.contentView.frame.origin.x, y: cell.contentView.frame.origin.y, width: cell.contentView.frame.width, height: cell.contentView.frame.height + view.frame.height)
+            cell.contentView.addSubview(view)
         }
-        cell.contentView.addSubview(view)
         return cell
     }
     
@@ -134,15 +135,28 @@ class ChatVC: JSQMessagesViewController {
         itemRef.updateChildValues(["photoURL": url])
     }
     
+    func sendVideoMessage() -> String? {
+        let itemRef = messageRef.childByAutoId()
+        
+        let messageItem = [
+            "videoURL": "NOTSET",
+            "senderId": senderId!,
+            ]
+        
+        itemRef.setValue(messageItem)
+        
+        JSQSystemSoundPlayer.jsq_playMessageSentSound()
+        
+        finishSendingMessage()
+        return itemRef.key
+    }
+    
+    func setVideoURL(_ url: String, forPhotoMessageWithKey key: String) {
+        let itemRef = messageRef.child(key)
+        itemRef.updateChildValues(["videoURL": url])
+    }
+    
     override func didPressAccessoryButton(_ sender: UIButton) {
-//        let picker = UIImagePickerController()
-//        picker.delegate = self
-//        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
-//            picker.sourceType = UIImagePickerControllerSourceType.camera
-//        } else {
-//            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-//        }
-//        present(picker, animated: true, completion:nil)
         
         selectorVW.frame = CGRect(x: 10, y: UIScreen.main.bounds.size.height - 35 - selectorVW.frame.height, width: selectorVW.frame.width, height: selectorVW.frame.height)
         self.transperentView = UIView(frame: UIScreen.main.bounds)
@@ -271,7 +285,17 @@ class ChatVC: JSQMessagesViewController {
                         self.fetchImageDataAtURL(photoURL, forMediaItem: mediaItem, clearsPhotoMessageMapOnSuccessForKey: nil)
                     }
                 }
-            } else {
+            } /*else if let id = messageData["senderId"] as String!,
+                let videoURL = messageData["videoURL"] as String! {
+                if let mediaItem = JSQPhotoMediaItem(maskAsOutgoing: id == self.senderId) {
+                    // 3
+                    self.addPhotoMessage(withId: id, key: snapshot.key, mediaItem: mediaItem)
+                    // 4
+                    if videoURL.hasPrefix("gs://") {
+                        self.fetchImageDataAtURL(videoURL, forMediaItem: mediaItem, clearsPhotoMessageMapOnSuccessForKey: nil)
+                    }
+                }
+            } */else {
                 print("Error! Could not decode message data")
             }
         })
@@ -310,6 +334,17 @@ class ChatVC: JSQMessagesViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func openCam(_ sender: Any) {
+        tapHandler()
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+            present(picker, animated: true, completion:nil)
+        } else {
+                Util.invokeAlertMethod("Camera", strBody: "Camera is not available right now", delegate: self)
+        }
+    }
 }
 
 // MARK: Image Picker Delegate
@@ -319,56 +354,26 @@ extension ChatVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
                                didFinishPickingMediaWithInfo info: [String : Any]) {
         
         picker.dismiss(animated: true, completion:nil)
-        
+        // Handle picking a Photo from the Camera - TODO
         // 1
-        if let photoReferenceUrl = info[UIImagePickerControllerReferenceURL] as? URL {
-            // Handle picking a Photo from the Photo Library
-            // 2
-            let assets = PHAsset.fetchAssets(withALAssetURLs: [photoReferenceUrl], options: nil)
-            let asset = assets.firstObject
-            
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        // 2
+        if let key = sendPhotoMessage() {
             // 3
-            if let key = sendPhotoMessage() {
+            let imageData = UIImageJPEGRepresentation(image, 1.0)
                 // 4
-                asset?.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
-                    let imageFileURL = contentEditingInput?.fullSizeImageURL
-                    
-                    // 5
-                    let path = "\(FIRAuth.auth()?.currentUser?.uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(photoReferenceUrl.lastPathComponent)"
-                    
-                    // 6
-                    self.storageRef.child(path).putFile(imageFileURL!, metadata: nil) { (metadata, error) in
-                        if let error = error {
-                            print("Error uploading photo: \(error.localizedDescription)")
-                            return
-                        }
-                        // 7
-                        self.setImageURL(self.storageRef.child((metadata?.path)!).description, forPhotoMessageWithKey: key)
-                    }
-                })
-            }
-        } else {
-            // Handle picking a Photo from the Camera - TODO
-            // 1
-            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-            // 2
-            if let key = sendPhotoMessage() {
-                // 3
-                let imageData = UIImageJPEGRepresentation(image, 1.0)
-                // 4
-                let imagePath = FIRAuth.auth()!.currentUser!.uid + "/\(Int(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
-                // 5
-                let metadata = FIRStorageMetadata()
-                metadata.contentType = "image/jpeg"
-                // 6
-                storageRef.child(imagePath).put(imageData!, metadata: metadata) { (metadata, error) in
-                    if let error = error {
-                        print("Error uploading photo: \(error)")
-                        return
-                    }
-                    // 7
-                    self.setImageURL(self.storageRef.child((metadata?.path)!).description, forPhotoMessageWithKey: key)
+            let imagePath = (FIRAuth.auth()!.currentUser!.uid) + "/\(Int(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
+            // 5
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            // 6
+            storageRef.child(imagePath).put(imageData!, metadata: metadata) { (metadata, error) in
+                if let error = error {
+                    print("Error uploading photo: \(error)")
+                    return
                 }
+                // 7
+                self.setImageURL(self.storageRef.child((metadata?.path)!).description, forPhotoMessageWithKey: key)
             }
         }
     }

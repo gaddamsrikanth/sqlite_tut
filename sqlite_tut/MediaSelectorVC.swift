@@ -57,7 +57,7 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.selectorMethod))
         cell.addGestureRecognizer(longPress)
         
-        let asset = result.object(at: indexPath.row)
+        let asset = result.object(at: indexPath.item)
         switch type {
         case 1:
             let width: CGFloat = 105
@@ -90,10 +90,10 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
         if mulSelection! {
             if cell.checked! {
                 cell.checkBoxImgVW.image = UIImage(named: "unchecked")
-                selectedAssets = selectedAssets.filter{$0 != result.object(at: indexPath.row)}
+                selectedAssets = selectedAssets.filter{$0 != result.object(at: indexPath.item)}
             } else {
                 cell.checkBoxImgVW.image = UIImage(named: "checked")
-                selectedAssets.append(result.object(at: indexPath.row))
+                selectedAssets.append(result.object(at: indexPath.item))
             }
             cell.checked = !cell.checked
         } else {
@@ -105,11 +105,11 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
                 DispatchQueue.main.async {
                     if let key = vc.sendPhotoMessage() {
                         // 4
-                        self.result.object(at: indexPath.row).requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
+                        self.result.object(at: indexPath.item).requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
                             let imageFileURL = contentEditingInput?.fullSizeImageURL
                             
                             // 5
-                            let path = "\(FIRAuth.auth()?.currentUser?.uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(self.result.object(at: indexPath.row).value(forKey: "filename"))"
+                            let path = "\(FIRAuth.auth()?.currentUser?.uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(self.result.object(at: indexPath.item).value(forKey: "filename"))"
                             
                             // 6
                             vc.storageRef.child(path).putFile(imageFileURL!, metadata: nil) { (metadata, error) in
@@ -145,7 +145,7 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
                     pic.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
                         let imageFileURL = contentEditingInput?.fullSizeImageURL
                     
-                        let path = "\(FIRAuth.auth()?.currentUser?.uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(pic.value(forKey: "filename"))"
+                        let path = "\((FIRAuth.auth()?.currentUser?.uid)!)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(pic.value(forKey: "filename")!)"
                             vc.storageRef.child(path).putFile(imageFileURL!, metadata: nil) { (metadata, error) in
                             if let error = error {
                                 print("Error uploading photo: \(error.localizedDescription)")

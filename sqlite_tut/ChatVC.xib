@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,46 +28,45 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxhead.png" translatesAutoresizingMaskIntoConstraints="NO" id="RhL-IU-CHU">
                     <rect key="frame" x="0.0" y="0.0" width="200" height="75"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJv-wc-rVa">
-                    <rect key="frame" x="29" y="3" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="JJv-wc-rVa" secondAttribute="height" multiplier="1:1" id="WpH-LW-iaT"/>
-                    </constraints>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJv-wc-rVa">
+                    <rect key="frame" x="16" y="15" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="videoicon.png"/>
                     <connections>
                         <action selector="selectVideo:" destination="-1" eventType="touchUpInside" id="PQW-Qg-5Oc"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaQ-hc-WCZ">
-                    <rect key="frame" x="116" y="5" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="DaQ-hc-WCZ" secondAttribute="height" multiplier="1:1" id="e03-ZC-Ocm"/>
-                    </constraints>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaQ-hc-WCZ">
+                    <rect key="frame" x="54" y="15" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="imgicon.png"/>
                     <connections>
                         <action selector="selectImage:" destination="-1" eventType="touchUpInside" id="VQy-Em-A83"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cS-mq-fTA">
+                    <rect key="frame" x="92" y="10" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="camIcon.png"/>
+                    <connections>
+                        <action selector="openCam:" destination="-1" eventType="touchUpInside" id="eu2-qt-R8B"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="DaQ-hc-WCZ" firstAttribute="top" secondItem="k9p-3P-Kxc" secondAttribute="top" constant="5" id="42J-tw-Vov"/>
-                <constraint firstAttribute="trailing" secondItem="DaQ-hc-WCZ" secondAttribute="trailing" constant="34" id="6gL-Ji-gMc"/>
                 <constraint firstAttribute="bottom" secondItem="RhL-IU-CHU" secondAttribute="bottom" id="9Lh-1K-Fn4"/>
-                <constraint firstAttribute="bottom" secondItem="DaQ-hc-WCZ" secondAttribute="bottom" constant="20" id="Hig-Dj-vN2"/>
                 <constraint firstAttribute="trailing" secondItem="RhL-IU-CHU" secondAttribute="trailing" id="SD8-cZ-azm"/>
-                <constraint firstItem="JJv-wc-rVa" firstAttribute="leading" secondItem="k9p-3P-Kxc" secondAttribute="leading" constant="29" id="Tf4-F3-S1A"/>
-                <constraint firstItem="JJv-wc-rVa" firstAttribute="top" secondItem="k9p-3P-Kxc" secondAttribute="top" constant="3" id="Y7n-eD-fP8"/>
-                <constraint firstAttribute="bottom" secondItem="JJv-wc-rVa" secondAttribute="bottom" constant="22" id="cGA-hb-QDW"/>
                 <constraint firstItem="RhL-IU-CHU" firstAttribute="top" secondItem="k9p-3P-Kxc" secondAttribute="top" id="l4U-eg-wQ4"/>
                 <constraint firstItem="RhL-IU-CHU" firstAttribute="leading" secondItem="k9p-3P-Kxc" secondAttribute="leading" id="t3e-4M-Dsf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-51" y="-437.5"/>
+            <point key="canvasLocation" x="-175" y="-447"/>
         </view>
     </objects>
     <resources>
         <image name="boxhead.png" width="200" height="75"/>
+        <image name="camIcon.png" width="50" height="50"/>
         <image name="imgicon.png" width="50" height="50"/>
         <image name="videoicon.png" width="50" height="50"/>
     </resources>
