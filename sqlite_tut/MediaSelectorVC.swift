@@ -162,24 +162,53 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
     
     //MARK: IBAction methods
     @IBAction func sendAssets(_ sender: Any) {
-        let vc = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 2] as! ChatVC
-        DispatchQueue.main.async {
-            for pic in self.selectedAssets {
-                if let key = vc.sendPhotoMessage() {
-                    pic.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
-                        let imageFileURL = contentEditingInput?.fullSizeImageURL
-                    
-                        let path = "\((FIRAuth.auth()?.currentUser?.uid)!)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(pic.value(forKey: "filename")!)"
-                            vc.storageRef.child(path).putFile(imageFileURL!, metadata: nil) { (metadata, error) in
-                            if let error = error {
-                                print("Error uploading photo: \(error.localizedDescription)")
-                                return
+        switch type {
+        case 1:
+            let vc = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 2] as! ChatVC
+            DispatchQueue.main.async {
+                for video in self.selectedAssets {
+                    if let key = vc.sendVideoMessage() {
+                        // 4
+                        video.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
+                            let videoFileUrl = (contentEditingInput?.audiovisualAsset as! AVURLAsset).url.absoluteString
+                            // 5
+                            let path = "\((FIRAuth.auth()?.currentUser?.uid)!)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(video.value(forKey: "filename")!)"
+                            
+                            // 6
+                            vc.storageRef.child(path).putFile(URL(string: videoFileUrl)!, metadata: nil) { (metadata, error) in
+                                if let error = error {
+                                    print("Error uploading photo: \(error.localizedDescription)")
+                                    return
+                                }
+                                // 7
+                                vc.setVideoURL(vc.storageRef.child((metadata?.path)!).description, forVideoMessageWithKey: key)
                             }
-                            vc.setImageURL(vc.storageRef.child((metadata?.path)!).description, forPhotoMessageWithKey: key)
-                        }
-                    })
+                        })
+                    }
                 }
             }
+            break
+        default:
+            let vc = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 2] as! ChatVC
+            DispatchQueue.main.async {
+                for pic in self.selectedAssets {
+                    if let key = vc.sendPhotoMessage() {
+                        pic.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
+                            let imageFileURL = contentEditingInput?.fullSizeImageURL
+                            
+                            let path = "\((FIRAuth.auth()?.currentUser?.uid)!)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(pic.value(forKey: "filename")!)"
+                            vc.storageRef.child(path).putFile(imageFileURL!, metadata: nil) { (metadata, error) in
+                                if let error = error {
+                                    print("Error uploading photo: \(error.localizedDescription)")
+                                    return
+                                }
+                                vc.setImageURL(vc.storageRef.child((metadata?.path)!).description, forPhotoMessageWithKey: key)
+                            }
+                        })
+                    }
+                }
+            }
+            break
         }
         if let nav = self.navigationController {
             nav.popViewController(animated: true)
@@ -214,6 +243,7 @@ class MediaSelectorVC: UIViewController,UICollectionViewDelegate,UICollectionVie
             break
         default:
             let allPhotosOptions = PHFetchOptions()
+            allPhotosOptions.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
             allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
             result = PHAsset.fetchAssets(with: allPhotosOptions)
             break

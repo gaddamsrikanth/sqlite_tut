@@ -256,10 +256,39 @@ class ChatVC: JSQMessagesViewController {
                 }
                 
                 // 4
+                let localpath = "sqlite_tut/images/" + (metadata?.path)!
+                let directories = localpath.components(separatedBy: "/").filter{!$0.contains(".")}
+                var path:String? = ""
+                for dir in 0..<directories.count {
+                    path?.append(directories[dir])
+                    let fileManager = FileManager.default
+                    let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(path!)
+                    if !fileManager.fileExists(atPath: paths){
+                        try! fileManager.createDirectory(atPath: paths, withIntermediateDirectories: true, attributes: nil)
+                    }
+                    path?.append("/")
+                }
+                let fileManager = FileManager.default
+                let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(localpath)
                 if (metadata?.contentType == "image/gif") {
-                    mediaItem.image = UIImage.gif(data: data!)
+                    if !FileManager.default.fileExists(atPath: paths) {
+                        print("fetched from server")
+                        mediaItem.image = UIImage.gif(data: data!)
+                        fileManager.createFile(atPath: paths as String, contents: data, attributes: nil)
+                    } else {
+                        print("fetched from local")
+                        mediaItem.image = UIImage.gif(url: paths)
+                    }
                 } else {
-                    mediaItem.image = UIImage.init(data: data!)
+                    if !FileManager.default.fileExists(atPath: paths) {
+                        print("fetched from server")
+                        mediaItem.image = UIImage.init(data: data!)
+                        fileManager.createFile(atPath: paths as String, contents: data, attributes: nil)
+                    } else {
+                        print("fetched from local")
+                        mediaItem.image = UIImage(contentsOfFile: paths)
+                    }
+                    
                 }
                 self.collectionView.reloadData()
                 
