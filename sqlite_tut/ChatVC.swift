@@ -2,6 +2,8 @@ import UIKit
 import Firebase
 import JSQMessagesViewController
 import Photos
+import AVKit
+import AVFoundation
 
 class ChatVC: JSQMessagesViewController {
 
@@ -113,9 +115,12 @@ class ChatVC: JSQMessagesViewController {
                 tap.cancelsTouchesInView = false
                 self.transperentView.addGestureRecognizer(tap)
             } else {
-                let vc = VideoPlayerVC()
-                vc.url = (message.media as! JSQVideoMediaItem).fileURL
-                self.navigationController?.pushViewController(vc, animated: true)
+                let player = AVPlayer(url: (message.media as! JSQVideoMediaItem).fileURL)
+                let avplayer = AVPlayerViewController()
+                avplayer.player = player
+                self.present(avplayer, animated: true) {
+                    avplayer.player?.play()
+                }
             }
         } else {
             Util.invokeAlertMethod("Message Details", strBody: "Sender: \(message.senderDisplayName!)\nMessage: \(message.text)" as NSString, delegate: self)
