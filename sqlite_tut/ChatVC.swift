@@ -295,7 +295,8 @@ class ChatVC: JSQMessagesViewController {
                     return
                 }
 //                FileManager.default.createFile(atPath: "", contents: <#T##Data?#>, attributes: <#T##[String : Any]?#>)
-                mediaItem.fileURL = URL(string: videoURL)
+                mediaItem.fileURL = metadata?.downloadURL()
+//                mediaItem.fileURL = URL(string: videoURL)
                 mediaItem.isReadyToPlay = true
                 self.collectionView.reloadData()
                 guard key != nil else {

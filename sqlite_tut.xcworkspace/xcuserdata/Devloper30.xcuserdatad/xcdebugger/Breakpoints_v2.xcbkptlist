@@ -36,12 +36,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "sqlite_tut/ChatVC.swift"
-            timestampString = "513001572.938189"
+            timestampString = "513061396.897013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "354"
-            endingLineNumber = "354"
-            landmarkName = "observeMessages()"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "fetchVideoDataAtURL(_:forMediaItem:clearsPhotoMessageMapOnSuccessForKey:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
