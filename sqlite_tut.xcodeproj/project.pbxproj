@@ -50,7 +50,6 @@
 		7B14D1A71E811AB20060BF5F /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D1A41E811AB20060BF5F /* ModelManager.swift */; };
 		7B14D1A81E811AB20060BF5F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D1A51E811AB20060BF5F /* Photo.swift */; };
 		7B14D1A91E811AB20060BF5F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B14D1A61E811AB20060BF5F /* Util.swift */; };
-		7B1B95281E829FC200E0EC85 /* Student.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B95271E829FC200E0EC85 /* Student.sqlite */; };
 		7B420B621E920F6700ED7C4E /* MediaSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B420B601E920F6700ED7C4E /* MediaSelectorVC.swift */; };
 		7B420B631E920F6700ED7C4E /* MediaSelectorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B420B611E920F6700ED7C4E /* MediaSelectorVC.xib */; };
 		7B420B671E92133700ED7C4E /* arrow-alt-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B420B661E92133700ED7C4E /* arrow-alt-right.png */; };
@@ -62,6 +61,7 @@
 		7B420B791E9235E400ED7C4E /* videoicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B420B771E9235E400ED7C4E /* videoicon.png */; };
 		7B420B7C1E9251DD00ED7C4E /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B420B7A1E9251DD00ED7C4E /* checked.png */; };
 		7B420B7D1E9251DD00ED7C4E /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B420B7B1E9251DD00ED7C4E /* unchecked.png */; };
+		7BD9DDE81E94DE09007D931D /* Student.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7BD9DDE71E94DE09007D931D /* Student.sqlite */; };
 		8B06B510C815B33D9FA62A12 /* Pods_sqlite_tutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F797FE3F2682BEDC1CAF3167 /* Pods_sqlite_tutTests.framework */; };
 		9A64B68F0DE965F68F40FC78 /* Pods_sqlite_tutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33151223944C087BF431C055 /* Pods_sqlite_tutUITests.framework */; };
 		DEE885DC396AA4B6D8E3B461 /* Pods_sqlite_tut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10D0B76C7A23F100817EA18 /* Pods_sqlite_tut.framework */; };
@@ -143,7 +143,6 @@
 		7B14D1A41E811AB20060BF5F /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		7B14D1A51E811AB20060BF5F /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7B14D1A61E811AB20060BF5F /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		7B1B95271E829FC200E0EC85 /* Student.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Student.sqlite; path = ../Student.sqlite; sourceTree = "<group>"; };
 		7B420B601E920F6700ED7C4E /* MediaSelectorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaSelectorVC.swift; sourceTree = "<group>"; };
 		7B420B611E920F6700ED7C4E /* MediaSelectorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaSelectorVC.xib; sourceTree = "<group>"; };
 		7B420B661E92133700ED7C4E /* arrow-alt-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-alt-right.png"; sourceTree = "<group>"; };
@@ -155,6 +154,7 @@
 		7B420B771E9235E400ED7C4E /* videoicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videoicon.png; sourceTree = "<group>"; };
 		7B420B7A1E9251DD00ED7C4E /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		7B420B7B1E9251DD00ED7C4E /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		7BD9DDE71E94DE09007D931D /* Student.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Student.sqlite; sourceTree = "<group>"; };
 		845BBF12ECF7C55C7D43413A /* Pods-sqlite_tutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tutUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tutUITests/Pods-sqlite_tutUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A10D0B76C7A23F100817EA18 /* Pods_sqlite_tut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sqlite_tut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABB5ABFCC2DF37738690CEA /* Pods-sqlite_tut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sqlite_tut.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sqlite_tut/Pods-sqlite_tut.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,8 +211,8 @@
 		7B14D13E1E8106A90060BF5F = {
 			isa = PBXGroup;
 			children = (
+				7BD9DDE71E94DE09007D931D /* Student.sqlite */,
 				7B130D2D1E8D351A00C14908 /* UIImage+Gif.swift */,
-				7B1B95271E829FC200E0EC85 /* Student.sqlite */,
 				7B14D1881E8114A10060BF5F /* fmdb */,
 				7B14D1491E8106A90060BF5F /* sqlite_tut */,
 				7B14D15E1E8106AA0060BF5F /* sqlite_tutTests */,
@@ -485,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B14D1551E8106A90060BF5F /* LaunchScreen.storyboard in Resources */,
+				7BD9DDE81E94DE09007D931D /* Student.sqlite in Resources */,
 				7B14D17B1E8107340060BF5F /* HomeVC.xib in Resources */,
 				7B420B6F1E92179500ED7C4E /* AssestCell.xib in Resources */,
 				7B14D1841E8107830060BF5F /* InsertRecordVC.xib in Resources */,
@@ -494,7 +495,6 @@
 				7B130D221E8D04D500C14908 /* ChannelCell.xib in Resources */,
 				7B420B751E92321B00ED7C4E /* boxhead.png in Resources */,
 				7B420B631E920F6700ED7C4E /* MediaSelectorVC.xib in Resources */,
-				7B1B95281E829FC200E0EC85 /* Student.sqlite in Resources */,
 				7B420B731E922C0000ED7C4E /* backbtn.png in Resources */,
 				7B130D161E8CF0EE00C14908 /* LoginVC.xib in Resources */,
 				7B420B7D1E9251DD00ED7C4E /* unchecked.png in Resources */,
