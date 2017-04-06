@@ -76,6 +76,20 @@ class ChatVC: JSQMessagesViewController {
         return messages.count
     }
     
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
+        return 15
+    }
+    
+//    func collectionView(_ collectionView: JSQMessagesCollectionView, accessibilityFor cell: JSQMessagesCollectionViewCell, indexPath: IndexPath, message messageItem: JSQMessageData) {
+//        let isMediaMessage: Bool = messageItem.isMediaMessage()
+//        cell.isAccessibilityElement = true
+//        if !isMediaMessage {
+//            cell.accessibilityLabel = String(format: Bundle.jsq_localizedString(forKey: "text_message_accessibility_label"), messageItem.senderDisplayName(), messageItem.text as! CVarArg)
+//        } else {
+//            cell.accessibilityLabel = String(format: Bundle.jsq_localizedString(forKey: "media_message_accessibility_label"), messageItem.senderDisplayName())
+//        }
+//    }
+
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
         let message = messages[indexPath.item] // 1
         if message.senderId == senderId { // 2
@@ -84,6 +98,12 @@ class ChatVC: JSQMessagesViewController {
             return incomingBubbleImageView
         }
     }
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString! {
+        let message = messages[indexPath.item]
+        return NSAttributedString(string: message.senderDisplayName)
+    }
+    
+    
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
@@ -93,7 +113,8 @@ class ChatVC: JSQMessagesViewController {
         } else {
             cell.textView?.textColor = UIColor.black
         }
-        
+        cell.isAccessibilityElement = true
+        cell.accessibilityLabel = message.senderDisplayName
         return cell
     }
     
@@ -369,7 +390,7 @@ class ChatVC: JSQMessagesViewController {
             let messageData = snapshot.value as! Dictionary<String, String>
             
             if let id = messageData["senderId"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String!, text.characters.count > 0 {  // 4
-                self.addMessage(withId: id, name: name, text: text+"\n\(name)")                // 5
+                self.addMessage(withId: id, name: name, text: text)                // 5
                 self.finishReceivingMessage()
             } else if let id = messageData["senderId"] as String!,
                 let photoURL = messageData["photoURL"] as String! { // 1
